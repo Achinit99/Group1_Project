@@ -20,15 +20,36 @@ $result2 = mysqli_query($connection, $query2);
   <link rel="stylesheet" href="style2.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <title>DataTable</title>
+
+  <style>
+    .foo{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 
-<body  style="background-color: cadetblue">
 
+<body  style="background-color: cadetblue"  class="mr-3">
 
-  <h2 class="text-center" style="font-size: 4rem; text-align: center; color: #fff">
-    Available Items
+<nav class="navbar navbar-light bg-warning " >
+
+  <a class="navbar-brand" href="#" >
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" ">
+    ACHINI STORE
+  </a>
+  <button type="button" class="btn btn-outline-dark mx-4" >REPORT <i class="bi bi-box-arrow-down"></i></button>
+  
+</nav>
+
+<div class="mt-4"">
+  <h2 class="text-center" style="font-size: 2rem; text-align: center; color: #fff">
+    Available Products
   </h2>
+</div>
 
   <!-- new table start -->
 
@@ -69,6 +90,18 @@ $result2 = mysqli_query($connection, $query2);
       $('#example').DataTable();
     });
   </script>
+
+
+
+<footer class="bg-light text-center text-lg-start foo">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright: ACHINI T720
+    
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>
 </body>
 
 </html>
