@@ -1,3 +1,14 @@
+<?php
+include_once('connection.php');
+
+$query="SELECT item_code, item_name, category, unit_price, selling_price FROM item";
+$query2="SELECT quantity FROM stock";
+
+$result= mysqli_query($connection,$query);
+$result2=mysqli_query($connection,$query2);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,53 +35,65 @@
         Available Items
       </h2>
       <div>
-        <div>
-          <div>
-            <label style="font-size: 1.6rem; color: #fff">Show
-              <select style="background-color: #1a132f" id="ddlViewBy" onchange="changeLength" aria-controls="realtime" class="Show" style="font-size: 1.5rem">
-                <option style="background-color: #1a132f" value="10">
-                  10
-                </option>
-                <option style="background-color: #1a132f" value="25">
-                  25
-                </option>
-                <option style="background-color: #1a132f" value="50">
-                  50
-                </option>
-              </select>
-              entries</label>
-          </div>
-          <div class="searchContainer">
-            <label style="font-size: 1.7rem; color: #fff">Search:<input style="color: rgb(0, 0, 0); background: #dddddd" id="search" onkeyup="search(this.value)" type="search" class="" placeholder="" aria-controls="realtime" /></label>
-          </div>
-          <table id="dataTable" class="display col-lg-md-sm-6" style="width: 100%; font-size: 1.9rem">
-            <thead>
-              <tr>
-                <th>
-                  Item No
-                  <i class="glyphicon"></i>
-                </th>
-                <th>
-                  Name
-                  <i class="glyphicon"></i>
-                </th>
-                <th>
-                  Catagory
-                  <i class="glyphicon"></i>
-                </th>
-                <th>
-                  Unit Price
-                  <i class="glyphicon"></i>
-                </th>
-                <th>
-                  Sell Price
-                  <i class="glyphicon"></i>
-                </th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+        <div>  
+
+              <?php
+
+              $table='<table id="dataTable" class="display col-lg-md-sm-6" style="width: 100%; font-size: 1.9rem">';
+              $table .='<tr>
+              <th>
+                Item No
+                <i class="glyphicon"></i>
+              </th>
+              <th>
+                Name
+                <i class="glyphicon"></i>
+              </th>
+              <th>
+                Catagory
+                <i class="glyphicon"></i>
+              </th>
+              <th>
+                Unit Price
+                <i class="glyphicon"></i>
+              </th>
+              <th>
+                Sell Price
+                <i class="glyphicon"></i>
+              </th>
+              <th>Quantity</th>
+            </tr>';
+
+                while($res=mysqli_fetch_assoc($result))
+                {
+                  $res2=mysqli_fetch_assoc($result2);
+                  $table.='<tr>';
+                  $table.='<td>'.$res['item_code'].'</td>';
+                  $table.='<td>'.$res['item_name'].'</td>';
+                  $table.='<td>'.$res['category'].'</td>';
+                  $table.='<td>'.$res['unit_price'].'</td>';
+                  $table.='<td>'.$res['selling_price'].'</td>';
+                  $table.='<td>'.$res2['quantity'].'</td>';
+                  $table.='</tr>';
+                }
+                
+
+                ;
+                
+
+                
+              ?>
+             
+
+
+
+            
+
+      <!-- Item table End -->
+
+
+      
+
           <div class="dataTables_info" id="realtime_info" role="status" aria-live="polite"></div>
           <div class="searchContainer" style="padding-top: 1rem; color: #fff">
             <div class="form-check form-check-inline; col-md-2" style="text-align: left; padding-top: 2.5rem; font-size: 1.9rem">
@@ -97,6 +120,10 @@
               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
               <label class="form-check-label" for="inlineCheckbox1">6-Catagory</label>
             </div>
+
+            <?php
+            echo $table;
+            ?>
             <ul class="pagination">
               <li class="page-item">
                 <a class="page-link">Previous</a>
