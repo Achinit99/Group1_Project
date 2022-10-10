@@ -16,7 +16,7 @@ $result2 = mysqli_query($connection, $query2);
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
+
   <link rel="stylesheet" href="style2.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
@@ -24,7 +24,7 @@ $result2 = mysqli_query($connection, $query2);
   <title>DataTable</title>
 
   <style>
-    .foo{
+    .foo {
       position: fixed;
       bottom: 0;
       width: 100%;
@@ -33,28 +33,30 @@ $result2 = mysqli_query($connection, $query2);
 </head>
 
 
-<body  style="background-color: cadetblue"  class="mr-3">
-
-<nav class="navbar navbar-light bg-warning " >
-
-  <a class="navbar-brand" href="#" >
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" ">
-    ACHINI STORE
+<body style="background-color: cadetblue" class="mr-3">
+  <nav class="navbar navbar-light bg-warning ">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" ">
+    STORE NAME
   </a>
-  <button type="button" class="btn btn-outline-dark mx-4" >REPORT <i class="bi bi-box-arrow-down"></i></button>
+  <div class="d-flex justify-content-center">
+  <button type=" button" class="btn btn-outline-dark me-3"><i class="bi bi-gear"></i></button>
+  <button type=" button" class="btn btn-outline-dark me-3">REPORT<i class="bi bi-box-arrow-down ms-1"></i></button>
+  </div>
   
-</nav>
+  
+  </nav>
 
-<div class="mt-4"">
-  <h2 class="text-center" style="font-size: 2rem; text-align: center; color: #fff">
+  <div class="mt-4"">
+  <h2 class=" text-center" style="font-size: 2rem; text-align: center; color: #fff">
     Available Products
-  </h2>
-</div>
+    </h2>
+  </div>
 
   <!-- new table start -->
 
   <div class="container">
-  <table id="example" class="table table-striped" style="width:100%" border="1px"">
+    <table id="example" class="table table-striped" style="width:100%" border="1px"">
     <thead>
       <tr>
         <th>Item No</th>
@@ -81,27 +83,28 @@ $result2 = mysqli_query($connection, $query2);
   </table>
   </div>
   <!-- new table end -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <script src=" https://code.jquery.com/jquery-3.5.1.js">
+      </script>
+      <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
-  <script>
-    $(document).ready(function() {
-      $('#example').DataTable();
-    });
-  </script>
+      <script>
+        $(document).ready(function() {
+          $('#example').DataTable();
+        });
+      </script>
 
 
 
-<footer class="bg-light text-center text-lg-start foo">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright: ACHINI T720
-    
+      <footer class="bg-light text-center text-lg-start foo">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright: ACHINI T720
+          <button type="button" class="btn btn-outline-dark mx-4">LOGOUT <i class="bi bi-box-arrow-right"></i></button>
+        </div>
+        <!-- Copyright -->
+      </footer>
   </div>
-  <!-- Copyright -->
-</footer>
-</div>
 </body>
 
 </html>
