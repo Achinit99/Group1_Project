@@ -33,7 +33,8 @@
                                 <label class="form-check-label" for="form1Example3"> Remember password </label>
                             </div>
 
-                            <button type=" button" class="btn btn-outline-dark me-3">LOGIN<i class="bi bi-box-arrow-in-right"></i></button>
+                            <button type=" button" class="btn btn-outline-dark me-3"">LOGIN<i class="bi bi-box-arrow-in-right"></i></button>
+                            
 
                         </div>
                     </div>
