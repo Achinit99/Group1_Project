@@ -41,7 +41,7 @@ $result2 = mysqli_query($connection, $query2);
   </a>
   <div class="d-flex justify-content-center">
   <button type=" button" class="btn btn-outline-dark me-3"><i class="bi bi-gear"></i></button>
-  <button type=" button" class="btn btn-outline-dark me-3">REPORT<i class="bi bi-box-arrow-down ms-"></i></button>
+  <button type=" button" class="btn btn-outline-dark me-3" >REPORT<a href="download.php" style="color:black;text-decoration:none";></a><i class="bi bi-box-arrow-down ms-2"></i></button>
   </div>
   
   
@@ -102,11 +102,13 @@ $result2 = mysqli_query($connection, $query2);
           © 2022 Copyright: ACHINI T720
           
           <button type="button" class="btn btn-outline-dark mx-4"><a href="login.php" style="color:red;text-decoration:none;" >LOGOUT<i class="bi bi-box-arrow-right ms-2"></i></button>
-          
         </div>
         <!-- Copyright -->
       </footer>
   </div>
+
+
+
 </body>
 
 </html>
