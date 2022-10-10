@@ -1,3 +1,47 @@
+<?php
+include_once('connection.php');
+if (isset($_POST['submit'])) {
+    $error = array();
+    if (!isset($_POST['uname']) || strlen(trim($_POST['uname'])) < 1) {
+        $error[] = 'User name is invalid or empty';
+    }
+
+    if (!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
+        $error[] = 'PASSWORD is invalid or empty';
+    }
+
+    if (empty($error)) {
+        $uname = mysqli_real_escape_string($connection, $_POST['uname']);
+        $password = mysqli_real_escape_string($connection, $_POST['password']);
+
+
+        $sql = "SELECT * FROM user 
+        WHERE name='{$uname}'
+        AND password='{$password}'
+        LIMIT 1";
+
+        $result = mysqli_query($connection, $sql);
+
+        if ($result) {
+
+            if (mysqli_num_rows($result) == 1) {
+                header('Location:index.php');
+            } else {
+                $error[] = 'username and password invalid';
+            }
+        } else {
+            $error[] = 'Query fails';
+        }
+    } else {
+        $error[] = 'PASSWORD is invalid or empty';
+    }
+}
+
+?>
+
+
+
+
 <html>
 
 <head>
@@ -15,30 +59,38 @@
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
 
+                            <?php
+                            if (isset($error) && !empty($error)) {
+                                echo '<p style="color:red;">Empty username or passwors </p>';
+                            }
+                            ?>
+
                             <h3 class="mb-5"><i class="bi bi-person-bounding-box " style="font-size: 5rem;"></i></h3>
+                            <form action="login.php" method="post">
+                                <div class="form-outline mb-4">
 
-                            <div class="form-outline mb-4">
-                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Username" />
+                                    <input type="text" name="uname" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Username" />
 
-                            </div>
+                                </div>
 
-                            <div class="form-outline mb-4">
-                                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" />
+                                <div class="form-outline mb-4">
+                                    <input type="password" name="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" />
 
-                            </div>
+                                </div>
 
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-start mb-4">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form1Example3" />
-                                <label class="form-check-label" for="form1Example3"> Remember password </label>
-                            </div>
+                                <!-- Checkbox -->
+                                <div class="form-check d-flex justify-content-start mb-4">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form1Example3" />
+                                    <label class="form-check-label" for="form1Example3"> Remember password </label>
+                                </div>
 
-                            <button type=" button" class="btn btn-outline-dark me-3" href="login.php">LOGIN<i class="bi bi-box-arrow-in-right"></i></button>
-
+                                <button name="submit" type=" button" class="btn btn-outline-dark me-3" href="login.php">LOGIN<i class="bi bi-box-arrow-in-right"></i></button>
+                            
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
 </body>
