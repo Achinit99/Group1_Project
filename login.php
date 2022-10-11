@@ -1,4 +1,6 @@
 <?php
+ session_start(); 
+
 include_once('connection.php');
 if (isset($_POST['submit'])) {
     $error = array();
@@ -25,7 +27,9 @@ if (isset($_POST['submit'])) {
         if ($result) {
 
             if (mysqli_num_rows($result) == 1) {
+                $_SESSION['user'] = $uname;
                 header('Location:index.php');
+        
             } else {
                 $error[] = 'username and password invalid';
             }
@@ -35,8 +39,8 @@ if (isset($_POST['submit'])) {
     } else {
         $error[] = 'PASSWORD is invalid or empty';
     }
-}
-
+} // function that Destroys Session 
+  
 ?>
 
 

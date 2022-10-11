@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  header('Location:login.php');
+}
+
 include_once('connection.php');
 
 $query = "SELECT item_code, item_name, category, unit_price, selling_price, quantity FROM item";
@@ -25,9 +30,10 @@ $result2 = mysqli_query($connection, $query2);
 
   <style>
     .foo {
-      position: fixed;
+
       bottom: 0;
       width: 100%;
+
     }
   </style>
 </head>
@@ -39,15 +45,18 @@ $result2 = mysqli_query($connection, $query2);
       <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" ">
     STORE NAME
   </a>
-  <div class="d-flex justify-content-center">
-  <button type=" button" class="btn btn-outline-dark me-3"><i class="bi bi-gear"></i></button>
-  <button type=" button" class="btn btn-outline-dark me-3" >REPORT<a href="download.php" style="color:black;text-decoration:none";></a><i class="bi bi-box-arrow-down ms-2"></i></button>
-  </div>
-  
-  
+  <div class=" d-flex justify-content-center">
+      
+      <button type=" button" class="btn btn-outline-dark me-3"><a href="download.php" style="color:black;text-decoration:none" ;>REPORT</a><i class="bi bi-box-arrow-down ms-2"></i></button>
+      <button type=" button" class="btn btn-outline-dark me-3"><i class="bi bi-gear"></i></button>
+      <button type=" button" class="btn btn-outline-dark me-3"><a href="logout.php" style="color:black;text-decoration:none" ;><i class="bi bi-box-arrow-right "></i></a></button>
+      
+      </div>
+
+
   </nav>
 
-  <div class="mt-4"">
+  <div class="mt-5"">
   <h2 class=" text-center" style="font-size: 2rem; text-align: center; color: #fff">
     Available Products
     </h2>
@@ -69,7 +78,20 @@ $result2 = mysqli_query($connection, $query2);
     </thead>
 
 
-    <?php while ($res = mysqli_fetch_assoc($result)) { ?>
+    <?php
+    $tot = 0;
+    $tot2=0;
+    $fullqun = 0;
+    while ($res = mysqli_fetch_assoc($result)) {
+
+
+      $fullqun = $res['selling_price'] * $res['quantity'];
+      $tot = $tot + $fullqun;
+
+      $fullqum2=$res['unit_price'] *$res['quantity'];
+      $tot2=$tot2+$fullqum2;
+
+    ?>
       <tr>
         <td><?php echo $res['item_code']; ?></td>
         <td><?php echo $res['item_name']; ?></td>
@@ -78,34 +100,64 @@ $result2 = mysqli_query($connection, $query2);
         <td><?php echo $res['selling_price']; ?></td>
         <td><?php echo $res['quantity']; ?></td>
       </tr>
-    <?php }  ?>
+    <?php
+    }
+
+    ?>
 
   </table>
+
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">Total Revenue Sell :</h5>
+        <?php
+          echo "RS: " . $tot;
+          ?>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+  <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">Total Cost For Items  </h5>
+        <?php
+          echo "RS:  " . $tot2;
+          ?>
+      </div>
+    </div>
+  </div>
+  </div>
+
   </div>
   <!-- new table end -->
   <script src=" https://code.jquery.com/jquery-3.5.1.js">
-      </script>
-      <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-      <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
-      <script>
-        $(document).ready(function() {
-          $('#example').DataTable();
-        });
-      </script>
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable();
+    });
+  </script>
 
 
 
-      <footer class="bg-light text-center text-lg-start foo">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2022 Copyright: ACHINI T720
-          
-          <button type="button" class="btn btn-outline-dark mx-4"><a href="login.php" style="color:red;text-decoration:none;" >LOGOUT<i class="bi bi-box-arrow-right ms-2"></i></button>
-        </div>
-        <!-- Copyright -->
-      </footer>
+
+  <footer class="bg-light text-center text-lg-start foo">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: ACHINI T720
+
+      <!-- <button type="button" class="btn btn-outline-dark mx-4"><a href="logout.php" style="color:red;text-decoration:none;">LOGOUT<i class="bi bi-box-arrow-right ms-2"></i></button>
+    </div> -->
+    <!-- Copyright -->
+  </footer>
   </div>
+
+
 
 
 

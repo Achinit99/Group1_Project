@@ -59,7 +59,22 @@ $result2 = mysqli_query($connection, $query2);
     </thead>
 
 
-    <?php while ($res = mysqli_fetch_assoc($result)) { ?>
+    <?php
+    $tot = 0;
+    $tot2=0;
+    $fullqun = 0;
+    while ($res = mysqli_fetch_assoc($result)) {
+
+
+      $fullqun = $res['selling_price'] * $res['quantity'];
+      $tot = $tot + $fullqun;
+
+      $fullqum2=$res['unit_price'] *$res['quantity'];
+      $tot2=$tot2+$fullqum2;
+
+      $pro = $tot-$tot2;
+
+    ?>
       <tr>
         <td><?php echo $res['item_code']; ?></td>
         <td><?php echo $res['item_name']; ?></td>
@@ -71,6 +86,12 @@ $result2 = mysqli_query($connection, $query2);
     <?php }  ?>
 
   </table>
+
+  <h4><?php echo "Total Cost For Items RS: " . $tot2; ?></h4>
+  <h4><?php echo "Total Revenue Sell RS: " . $tot; ?></h4>
+  <h3><?php echo "Profit RS: " . $pro; ?></h3>
+
+  
   </div>
   <!-- new table end -->
   <script src=" https://code.jquery.com/jquery-3.5.1.js">
