@@ -57,7 +57,7 @@ $result2 = mysqli_query($connection, $query2);
   </nav>
 
   <div class="mt-5"">
-  <h2 class=" text-center" style="font-size: 2rem; text-align: center; color: #fff">
+  <h2 class=" text-center text-white" style="font-size: 2rem; text-align: center; color: #fff">
     Available Products
     </h2>
   </div>
@@ -109,7 +109,7 @@ $result2 = mysqli_query($connection, $query2);
 
   <div class="row">
   <div class="col-sm-6">
-    <div class="card my-4">
+    <div class="card my-4 text-white" style="background-color: cadetblue">
       <div class="card-body">
         <h5 class="card-title">Total Revenue Sell :</h5>
         <?php
@@ -119,7 +119,7 @@ $result2 = mysqli_query($connection, $query2);
     </div>
   </div>
   <div class="col-sm-6">
-  <div class="card my-4">
+  <div class="card my-4 text-white"style="background-color: cadetblue" >
       <div class="card-body">
         <h5 class="card-title">Total Cost For Items  </h5>
         <?php
