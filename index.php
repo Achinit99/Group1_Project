@@ -56,15 +56,58 @@ $result2 = mysqli_query($connection, $query2);
 
   </nav>
 
-  <div class="mt-5"">
+  
+ 
+  <!-- new table start -->
+
+  <div class="container">
+
+
+    <!-- new -->
+  <div class="row">
+  <div class="col-sm-4">
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- new end -->
+
+<div class="mt-5"">
   <h2 class=" text-center text-white" style="font-size: 2rem; text-align: center; color: #fff">
     Available Products
     </h2>
   </div>
 
-  <!-- new table start -->
 
-  <div class="container">
+
     <table id="example" class="table table-striped" style="width:100%" border="1px"">
     <thead>
       <tr>
@@ -74,6 +117,8 @@ $result2 = mysqli_query($connection, $query2);
         <th>Unit Price</th>
         <th>Sell Price</th>
         <th>Quantity</th>
+        <th></th>
+        
       </tr>
     </thead>
 
@@ -99,6 +144,10 @@ $result2 = mysqli_query($connection, $query2);
         <td><?php echo $res['unit_price']; ?></td>
         <td><?php echo $res['selling_price']; ?></td>
         <td><?php echo $res['quantity']; ?></td>
+        <td><button type="button" class="btn btn-outline-danger "><i class="bi bi-pencil"></i></button></td>
+
+        
+        
       </tr>
     <?php
     }
