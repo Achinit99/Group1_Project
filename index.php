@@ -39,7 +39,7 @@ $result2 = mysqli_query($connection, $query2);
 </head>
 
 
-<body style="background-color: cadetblue" class="mr-3">
+<body style="background-color: rgb(29, 53, 87)" class="mr-3">
   <nav class="navbar navbar-light bg-warning ">
     <a class="navbar-brand" href="#">
       <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" ">
@@ -56,7 +56,6 @@ $result2 = mysqli_query($connection, $query2);
 
   </nav>
 
-  
  
   <!-- new table start -->
 
@@ -106,9 +105,9 @@ $result2 = mysqli_query($connection, $query2);
     </h2>
   </div>
 
+<div class="text-white">
 
-
-    <table id="example" class="table table-striped" style="width:100%" border="1px"">
+    <table id="example" class="table" style="width:100%;color:rgb(241, 250, 238)" border="1px"">
     <thead>
       <tr>
         <th>Item No</th>
@@ -155,6 +154,7 @@ $result2 = mysqli_query($connection, $query2);
     ?>
 
   </table>
+</div>
 
   <div class="row">
   <div class="col-sm-6">
