@@ -209,7 +209,6 @@ $result2 = mysqli_query($connection, $query2);
 
 
 
-
 </body>
 
 </html>
