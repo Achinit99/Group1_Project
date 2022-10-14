@@ -26,6 +26,10 @@ $result2 = mysqli_query($connection, $query2);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+ 
   <title>DataTable</title>
 
   <style>
@@ -37,6 +41,10 @@ $result2 = mysqli_query($connection, $query2);
     }
   </style>
 </head>
+
+
+
+
 
 
 <body style="background-color: rgb(29, 53, 87)" class="mr-3">
@@ -56,6 +64,29 @@ $result2 = mysqli_query($connection, $query2);
 
   </nav>
 
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
  
   <!-- new table start -->
 
@@ -107,7 +138,12 @@ $result2 = mysqli_query($connection, $query2);
 
 <div class="text-white">
 
+<<<<<<< Updated upstream
     <table id="example" class="table" style="width:100%;color:rgb(241, 250, 238)" border="1px"">
+=======
+<div class="text-white">
+    <table id="example" class="table" style="width:100%; color:rgb(241, 250, 238);" border="1px"">
+>>>>>>> Stashed changes
     <thead>
       <tr>
         <th>Item No</th>
@@ -191,6 +227,18 @@ $result2 = mysqli_query($connection, $query2);
       $('#example').DataTable();
     });
   </script>
+
+
+
+
+
+
+<script>
+  var myModalEl = document.getElementById('myModal')
+myModalEl.addEventListener('hidden.bs.modal', function (event) {
+  // do something...
+})
+</script>
 
 
 
