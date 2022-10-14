@@ -107,7 +107,12 @@ $result2 = mysqli_query($connection, $query2);
 
 <div class="text-white">
 
+<<<<<<< Updated upstream
     <table id="example" class="table" style="width:100%;color:rgb(241, 250, 238)" border="1px"">
+=======
+<div class="text-white">
+    <table id="example" class="table" style="width:100%; color:rgb(241, 250, 238);" border="1px"">
+>>>>>>> Stashed changes
     <thead>
       <tr>
         <th>Item No</th>
