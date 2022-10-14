@@ -78,7 +78,7 @@ $profit = $tot - $tot2;
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-0 pb-3 ">
+        <div class="sidebar  pb-3 ">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ADMIN</h3>
@@ -98,8 +98,8 @@ $profit = $tot - $tot2;
 
 
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="add.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Add Product</a>
+                    <a href="index2.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="add.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Add Product</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Edit Product</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Charts</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>User Message</a>
@@ -153,136 +153,89 @@ $profit = $tot - $tot2;
             <!-- Navbar End -->
 
 
-            <!-- Sale & Revenue Start -->
-
-            <div class="container-fluid pt-4 px-4">
+           <!-- add product -->
+           <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Cost</p>
-                                <h6 class="mb-0"><?php
-                                                    echo "RS: " . number_format($tot2);
-                                                    ?></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0"><?php
-                                                    echo "RS: " . number_format($tot);
-                                                    ?></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Profit</p>
-                                <h6 class="mb-0"><?php
-                                                    echo "RS: " . number_format($profit);
-                                                    ?></h6>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Profit</p>
-                                <h6 class="mb-0"><?php
-                                                    echo "RS: ";
-                                                    ?></h6>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sale & Revenue End -->
-
-
-                    <!-- Sales Chart Start -->
-                    <!-- <div class="container-fluid pt-4 px-4">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-xl-6">
-                                <div class="bg-secondary text-center rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6 class="mb-0">Worldwide Sales</h6>
-                                        <a href="">Show All</a>
+                    <div class="col-sm-12 col-xl-8">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add Product</h6>
+                            <form>
+                                <div class="mb-3">
+                                    <label  class="form-label">Product Name</label>
+                                    <input type="text" class="form-control" >
+                                    <div class="form-text">#Hint:  Add your product name here.
                                     </div>
-                                    <canvas id="worldwide-sales"></canvas>
                                 </div>
-                            </div>
-                            <div class="col-sm-12 col-xl-6">
-                                <div class="bg-secondary text-center rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6 class="mb-0">Salse & Revenue</h6>
-                                        <a href="">Show All</a>
+                                <div class="mb-3">
+                                    <label  class="form-label">Category</label>
+                                    <input type="text" class="form-control" >
+                                    <div class="form-text">#Hint:  Add your Category name here.
                                     </div>
-                                    <canvas id="salse-revenue"></canvas>
                                 </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Sales Chart End -->
-
-
-                    <!-- Recent Sales Start -->
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Products</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table text-start align-middle table-bordered table-hover mb-0" id="example">
-                                    <thead>
-                                        <tr class="text-white">
-                                            <th scope="col">Item No</th>
-                                            <th scope="col">Item Name</th>
-                                            <th scope="col">Catagory</th>
-                                            <th scope="col">Unit Price</th>
-                                            <th scope="col">Sell Pric</th>
-                                            <th scope="col">Quantity</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <?php
-                                    $tot = 0;
-                                    $tot2 = 0;
-                                    $fullqun = 0;
-                                    while ($res = mysqli_fetch_assoc($result)) {
-
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $res['item_code']; ?></td>
-                                            <td><?php echo $res['item_name']; ?></td>
-                                            <td><?php echo $res['category']; ?></td>
-                                            <td><?php echo $res['unit_price']; ?></td>
-                                            <td><?php echo $res['selling_price']; ?></td>
-                                            <td><?php echo $res['quantity']; ?></td>
-
-                                        </tr>
-                                    <?php
-                                    }
-
-                                    ?>
-
-                                </table>
-                            </div>
+                                <div class="mb-3">
+                                    <label  class="form-label">Manufacture</label>
+                                    <input type="text" class="form-control" >
+                                    <div class="form-text">#Hint:  Add your product Manufacture here.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label  class="form-label">Capacity</label>
+                                    <input type="text" class="form-control" >
+                                    <div class="form-text">#Hint:  Add your product Capacity here.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label  class="form-label">Unit Price</label>
+                                    <input type="text" class="form-control" >
+                                    <div class="form-text">#Hint:  Add your product Unit Price here.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label  class="form-label">Selling Price</label>
+                                    <input type="text" class="form-control" >
+                                    <div  class="form-text">#Hint:  Add your product Selling Price here.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label  class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" >
+                                    <div class="form-text">#Hint:  Add availabe Quantity here
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
                         </div>
                     </div>
 
 
+                    <!-- ADD user -->
 
-                    <!-- Recent Sales End -->
-
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add Users</h6>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                   
+            <!-- Form End -->
 
 
 
