@@ -156,87 +156,58 @@ $profit = $tot - $tot2;
            <!-- add product -->
            <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-xl-8">
+                    <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Add Product</h6>
                             <form>
+
+                            <div class="input-group mb-3">
+                            <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" placeholder="Product Name" aria-label="Username">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" placeholder="Category" aria-label="Server">
+                            </div>
+
+                            <div class="input-group mb-3">
+                            <span class="input-group-text">@</span>
+                                <input type="number" class="form-control" placeholder="Unit Price" aria-label="Username">
+                                <span class="input-group-text">@</span>
+                                <input type="number" class="form-control" placeholder="Selling Price" aria-label="Server">
+                            </div>
+                            
+                            
+                               
                                 <div class="mb-3">
-                                    <label  class="form-label">Product Name</label>
-                                    <input type="text" class="form-control" >
-                                    <div class="form-text">#Hint:  Add your product name here.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label  class="form-label">Category</label>
-                                    <input type="text" class="form-control" >
-                                    <div class="form-text">#Hint:  Add your Category name here.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label  class="form-label">Manufacture</label>
-                                    <input type="text" class="form-control" >
+                                    
+                                    <input type="text" class="form-control" placeholder="Manufacture">
                                     <div class="form-text">#Hint:  Add your product Manufacture here.
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label  class="form-label">Capacity</label>
-                                    <input type="text" class="form-control" >
+                                    <input type="text" class="form-control" placeholder="Capacity">
                                     <div class="form-text">#Hint:  Add your product Capacity here.
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label  class="form-label">Unit Price</label>
-                                    <input type="text" class="form-control" >
-                                    <div class="form-text">#Hint:  Add your product Unit Price here.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label  class="form-label">Selling Price</label>
-                                    <input type="text" class="form-control" >
-                                    <div  class="form-text">#Hint:  Add your product Selling Price here.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label  class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" >
-                                    <div class="form-text">#Hint:  Add availabe Quantity here
-                                    </div>
-                                </div>
+
+
+                                <div class="input-group mb-3">
+                            <span class="input-group-text">@</span>
+                                <input type="number" class="form-control" placeholder="Quantity" aria-label="Username">
+                                <span class="input-group-text">@</span>
+                                <input class="form-control bg-dark" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Comments</label>
+                            </div>
+                            
                                 
-                                <button type="submit" class="btn btn-primary">Add</button>
+                                <button type="submit" class="btn btn-primary my-4">Add</button>
                             </form>
                         </div>
                     </div>
-
-
-                    <!-- ADD user -->
-
-                    <div class="col-sm-12 col-xl-4">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Add Users</h6>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </form>
-                        </div>
-                    </div>
-                   
-            <!-- Form End -->
-
 
 
 
