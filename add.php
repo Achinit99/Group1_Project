@@ -10,29 +10,46 @@ else{
 
 include_once('connection.php');
 
-$query = "SELECT item_code, item_name, category, unit_price, selling_price, quantity FROM item";
-$query2 = "SELECT quantity FROM stock";
 
-$result = mysqli_query($connection, $query);
-$result_for_cal = mysqli_query($connection, $query);
-$result2 = mysqli_query($connection, $query2);
+if(isset($_POST['add_product'])){
 
+   $product_name = $_POST['product_name'];
+   $product_Category = $_POST['product_Category'];
+   $product_unitprice = $_POST['product_unitprice'];
+   $product_sellingprice = $_POST['product_sellingprice'];
+   $product_manufacture = $_POST['product_manufacture'];
+   $product_capacity = $_POST['product_capacity'];
+   $product_quantity = $_POST['product_quantity'];
 
+   
+   $product_image = $_FILES['product_image']['name'];
+   $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
+   $product_image_folder = 'uploaded_img/'.$product_image;
 
-$tot = 0;
-$tot2 = 0;
-$fullqun = 0;
-while ($res = mysqli_fetch_assoc($result_for_cal)) {
-    $fullqun = $res['selling_price'] * $res['quantity'];
-    $tot = $tot + $fullqun;
+   if(empty($product_name) || empty($product_Category) || empty($product_unitprice) || empty($product_sellingprice) || empty($product_manufacture) || empty( $product_quantity)){
+      $message[] = 'please fill out all';
+   }else{
+      $insert = "INSERT INTO item(item_name, category, manufacturer,capcity, unit_price,selling_price,quantity,image) VALUES('$product_name', '$product_Category', '$product_manufacture', '$product_capacity', '$product_unitprice', '$product_sellingprice', '$product_quantity', '$product_image')";
+      $upload = mysqli_query($connection,$insert);
+      if($upload){
+         move_uploaded_file($product_image_tmp_name, $product_image_folder);
+         $message[] = 'new product added successfully';
+      }else{
+         $message[] = 'could not add the product';
+      }
+   }
 
-    $fullqum2 = $res['unit_price'] * $res['quantity'];
-    $tot2 = $tot2 + $fullqum2;
-}
+};
 
-$profit = $tot - $tot2;
+if(isset($_GET['delete'])){
+   $id = $_GET['delete'];
+   mysqli_query($connection, "DELETE FROM item WHERE id = $id");
+   header('location:admin_page.php');
+};
 
 ?>
+
+
 
 
 
@@ -67,6 +84,9 @@ $profit = $tot - $tot2;
 </head>
 
 <body>
+
+
+
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -152,39 +172,49 @@ $profit = $tot - $tot2;
             </nav>
             <!-- Navbar End -->
 
-
            <!-- add product -->
            <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Add Product</h6>
-                            <form>
+                            <?php
+
+                            if(isset($message)){
+                            foreach($message as $msg){
+                            echo '<h6 class="mb-4 text-danger ">'.$msg.'</h6>';
+
+                        }
+                    }
+                    
+                    ?>
+
+                            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
 
                             <div class="input-group mb-3">
                             <span class="input-group-text">@</span>
-                                <input type="text" class="form-control" placeholder="Product Name" aria-label="Username">
+                                <input type="text" class="form-control" name="product_name" placeholder="Product Name" >
                                 <span class="input-group-text">@</span>
-                                <input type="text" class="form-control" placeholder="Category" aria-label="Server">
+                                <input type="text" class="form-control" name="product_Category" placeholder="Category" aria-label="Server">
                             </div>
 
                             <div class="input-group mb-3">
                             <span class="input-group-text">@</span>
-                                <input type="number" class="form-control" placeholder="Unit Price" aria-label="Username">
+                                <input type="number" class="form-control" name="product_unitprice" placeholder="Unit Price" >
                                 <span class="input-group-text">@</span>
-                                <input type="number" class="form-control" placeholder="Selling Price" aria-label="Server">
+                                <input type="number" class="form-control" name="product_sellingprice" placeholder="Selling Price" >
                             </div>
                             
                             
                                
                                 <div class="mb-3">
                                     
-                                    <input type="text" class="form-control" placeholder="Manufacture">
+                                    <input type="text" class="form-control" name="product_manufacture" placeholder="Manufacture">
                                     <div class="form-text">#Hint:  Add your product Manufacture here.
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Capacity">
+                                    <input type="text" class="form-control" name="product_capacity" placeholder="Capacity">
                                     <div class="form-text">#Hint:  Add your product Capacity here.
                                     </div>
                                 </div>
@@ -192,9 +222,9 @@ $profit = $tot - $tot2;
 
                                 <div class="input-group mb-3">
                             <span class="input-group-text">@</span>
-                                <input type="number" class="form-control" placeholder="Quantity" aria-label="Username">
+                                <input type="number" class="form-control" name="product_quantity" placeholder="Quantity" >
                                 <span class="input-group-text">@</span>
-                                <input class="form-control bg-dark" type="file" id="formFile">
+                                <input class="form-control bg-dark" type="file" name="product_image">
                             </div>
 
                             <div class="form-floating">
@@ -204,7 +234,10 @@ $profit = $tot - $tot2;
                             </div>
                             
                                 
-                                <button type="submit" class="btn btn-primary my-4">Add</button>
+                                <button type="submit" name="add_product"class="btn btn-primary my-4" value="Add a product">Add</button>
+
+
+                                
                             </form>
                         </div>
                     </div>
