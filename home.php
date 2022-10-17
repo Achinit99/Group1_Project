@@ -59,7 +59,7 @@
                 <form class="d-flex">
                     
                     <i class="bi bi-bell mx-3 text-white"></i>
-                    <i class="bi bi-cart text-white mx-2"></i>
+                    <a href="cart.php"><i class="bi bi-cart text-white mx-2"></i></a>
                 </form>
             </div>
         </div>

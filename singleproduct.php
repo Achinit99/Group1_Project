@@ -108,13 +108,13 @@
                     <div>
                         <div class="row">
                             <div class="col-md-5">
-                            <button type="button" class="btn btn-warning">Warning</button>    
+                            <button type="button" class="btn btn-warning"><i class="bi bi-tags mx-2"></i>5% Discount</button>    
                             </div>
                         </div>
 
                     </div>
                     <hr class="singleline">
-                    <div class="row">
+                    <div class="row my-3">
                         <div class="col-xs-6">
                             <div class="product_quantity"> <span>QTY: </span> <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
                             </div>
