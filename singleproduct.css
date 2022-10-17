@@ -1,0 +1,231 @@
+
+
+
+
+.carousel-caption{
+    bottom: 140px;
+    padding-left: 0px;
+    padding-right: 400px;  
+}
+
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">"
+}
+
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .1rem 0rem !important;
+    margin-bottom: 0rem;
+    list-style: none;
+    background-color: #ffffff;
+    border-radius: .25rem
+}
+
+.single_product {
+    padding-top: 66px;
+    padding-bottom: 140px;
+    background-color: #e5e5e5;
+    margin-top: 0px;
+    padding: 17px
+}
+
+.product_name {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0px
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.50em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem
+}
+
+.product-rating {
+    margin-top: 10px
+}
+
+.rating-review {
+    color: #5b5b5b
+}
+
+.product_price {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 9px;
+    clear: left
+}
+
+.product_discount {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 300;
+    margin-top: 9px;
+    clear: left;
+    margin-left: 10px;
+    color: red
+}
+
+
+
+.singleline {
+    margin-top: 2rem;
+    margin-bottom: .90rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1)
+}
+
+
+
+.product_quantity {
+    width: 104px;
+    height: 47px;
+    border: solid 1px #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+    padding-left: 8px;
+    padding-top: -4px;
+    padding-bottom: 44px;
+    float: left;
+    margin-right: 22px;
+    margin-bottom: 11px
+}
+
+.shop-button {
+    height: 47px
+}
+
+
+
+.br-dashed {
+    border-radius: 5px;
+    border: 1px dashed #dddddd;
+    margin-top: 6px
+}
+
+/* 
+@media (max-width: 390px) {
+    .product_fav {
+        display: none
+    }
+} */
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+
+
+
+
+/* .image_list li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 165px;
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 15px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    overflow: hidden
+}
+
+.image_list li:last-child {
+    margin-bottom: 0
+}
+
+.image_list li:hover {
+    box-shadow: 0px 1px 5px rgba(247, 0, 0, 0.3)
+}
+
+.image_list li img {
+    max-width: 100%
+} */
+
+.image_selected {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% + 15px);
+    height: 525px;
+    -webkit-transform: translateX(-15px);
+    -moz-transform: translateX(-15px);
+    -ms-transform: translateX(-15px);
+    -o-transform: translateX(-15px);
+    transform: translateX(-15px);
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px
+}
+
+.image_selected img {
+    max-width: 100%
+}
+
+
+
+.product_quantity {
+    width: 182px;
+    height: 50px;
+    border: solid 1px #e5e5e5;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-left: 25px;
+    float: left;
+    margin-right: 30px
+}
+
+.product_quantity span {
+    display: block;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 50px;
+    float: left
+}
+
+.product_quantity input {
+    display: block;
+    width: 30px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding-left: 9px;
+    line-height: 50px;
+    float: left
+}
+
