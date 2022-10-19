@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['user'] = $uname;
-                header('Location:index.php');
+                header('Location:index2.php');
         
             } else {
                 $error[] = 'username and password invalid';
