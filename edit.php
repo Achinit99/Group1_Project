@@ -188,7 +188,7 @@ $profit = $tot - $tot2;
                                     <td><?php echo $res['unit_price']; ?></td>
                                     <td><?php echo $res['selling_price']; ?></td>
                                     <td><?php echo $res['quantity']; ?></td>
-                                    <th scope="col"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit</button>
+                                    <th scope="col"><button href="update-process.php?id=<?php echo $res['item_code']; ?>" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit</button>
                                         <button name="add_product" class="btn btn-primary" value="Add a product">Delete</button>
                                     </th>
 
@@ -248,7 +248,7 @@ $profit = $tot - $tot2;
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <h5 class="modal-title text-danger" id="exampleModalLabel"><?php echo $id ?></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
