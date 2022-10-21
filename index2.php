@@ -67,6 +67,7 @@ $profit = $tot - $tot2;
 </head>
 
 <body>
+    
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -98,9 +99,9 @@ $profit = $tot - $tot2;
 
 
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index2.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="add.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Add Product</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Edit Product</a>
+                    <a href="edit.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Edit Product</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Charts</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>User Message</a>
 
@@ -310,6 +311,12 @@ $profit = $tot - $tot2;
                 <!-- Back to Top -->
                 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
             </div>
+
+
+
+
+
+
 
             <!-- JavaScript Libraries -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
