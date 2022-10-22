@@ -188,7 +188,7 @@ $profit = $tot - $tot2;
                                     <td><?php echo $res['unit_price']; ?></td>
                                     <td><?php echo $res['selling_price']; ?></td>
                                     <td><?php echo $res['quantity']; ?></td>
-                                    <th scope="col"><button href="update-process.php?id=<?php echo $res['item_code']; ?>" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit</button>
+                                    <th scope="col"><button type="button" class="btn btn-success editbtn" name="edit" id="<?php echo $res['item_code']; ?>">Edit</button>
                                         <button name="add_product" class="btn btn-primary" value="Add a product">Delete</button>
                                     </th>
 
@@ -239,7 +239,7 @@ $profit = $tot - $tot2;
 
 
 
-<!-- ######################################################################################## -->
+    <!-- ######################################################################################## -->
     <!-- pop up start -->
 
 
@@ -254,39 +254,41 @@ $profit = $tot - $tot2;
                 <div class="modal-body">
 
                     <form method="post" action="popupaction.php">
+                        <input type="hidden" name="update_id" id="update_id">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Item Name</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="iname" name="iname">
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Catagory</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="cat" name="cat">
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Unit Price</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="uprice" name="uprice">
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Sell Price</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="sprice" name="sprice">
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Quantity</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="qt" name="qt">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Update</button>
+                    <button type="button" name="insertdata" class="btn btn-success editbtn">Update</button>
                 </div>
             </div>
         </div>
     </div>
 
 
+
     <!-- popup end -->
-<!-- ######################################################################################## -->
+    <!-- ######################################################################################## -->
 
 
 
@@ -309,20 +311,37 @@ $profit = $tot - $tot2;
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-
-
-
-
-    <script src=" https://code.jquery.com/jquery-3.5.1.js">
-    </script>
+    <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
+            $(document).ready(function() {
+                
+                $(document).on('click','.editbtn',function(){
+                    var itemCode=$(this).attr('id');
+                    $.ajax({
+                        url:"fetch.php",
+                        method:"POST",
+                        data:{itemCode:itemCode},
+                        dataType:"json",
+                        success:function(data){
+                            $('#iname').val(data.item_code);
+                            $('#cat').val(data.category);
+                            $('#uprice').val(data.unit_price);
+                            $('#sprice').val(data.selling_price);
+                            $('#qt').val(data.quantity);
+                            $('#exampleModal').modal('show');
+                        }
+
+                    });
+                });
+
+            });
+
+
+
+        
     </script>
 </body>
 
