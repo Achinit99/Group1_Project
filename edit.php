@@ -239,7 +239,7 @@ $profit = $tot - $tot2;
 
 
 
-
+<!-- ######################################################################################## -->
     <!-- pop up start -->
 
 
@@ -248,11 +248,12 @@ $profit = $tot - $tot2;
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-danger" id="exampleModalLabel"><?php echo $id ?></h5>
+                    <h5 class="modal-title text-danger" id="exampleModalLabel">Update</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+
+                    <form method="post" action="popupaction.php">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Item Name</label>
                             <input type="text" class="form-control" id="recipient-name">
@@ -285,7 +286,7 @@ $profit = $tot - $tot2;
 
 
     <!-- popup end -->
-
+<!-- ######################################################################################## -->
 
 
 
