@@ -9,26 +9,37 @@ if (!isset($_SESSION['user'])) {
 include_once('connection.php');
 
 $query = "SELECT item_code, item_name, category, unit_price, selling_price, quantity FROM item";
-$query2 = "SELECT quantity FROM stock";
+// $query2 = "SELECT quantity FROM stock";
 
 $result = mysqli_query($connection, $query);
-$result_for_cal = mysqli_query($connection, $query);
-$result2 = mysqli_query($connection, $query2);
+
+if (isset($_POST['update'])) {
+
+    $id = $_POST['icode'];
+    $name = $_POST['iname'];
+    $Category = $_POST['cat'];
+    $unitprice = $_POST['uprice'];
+    $sellingprice = $_POST['sprice'];
+    $quantity = $_POST['qt'];
+    
+
+    
+    $upquery = "UPDATE item SET item_name='$name', category='$Category', unit_price='$unitprice',selling_price='$sellingprice', quantity='$quantity' WHERE item_code = '$id'";
+    $query_run= mysqli_query($connection, $upquery);
 
 
+    if($query_run)
+    {
+        echo "ok";
+    }
 
-$tot = 0;
-$tot2 = 0;
-$fullqun = 0;
-while ($res = mysqli_fetch_assoc($result_for_cal)) {
-    $fullqun = $res['selling_price'] * $res['quantity'];
-    $tot = $tot + $fullqun;
-
-    $fullqum2 = $res['unit_price'] * $res['quantity'];
-    $tot2 = $tot2 + $fullqum2;
+    else
+    {
+        echo "ERROR";
+    }
 }
 
-$profit = $tot - $tot2;
+
 
 ?>
 
@@ -253,8 +264,9 @@ $profit = $tot - $tot2;
                 </div>
                 <div class="modal-body">
 
-                    <form method="post" action="popupaction.php">
-                        <input type="hidden" name="update_id" id="update_id">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+
+                        <input type="hidden" name="icode" id="icode">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Item Name</label>
                             <input type="text" class="form-control" id="iname" name="iname">
@@ -275,13 +287,16 @@ $profit = $tot - $tot2;
                             <label for="recipient-name" class="col-form-label">Quantity</label>
                             <input type="text" class="form-control" id="qt" name="qt">
                         </div>
-                    </form>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" name="insertdata" class="btn btn-success editbtn">Update</button>
+                    <button type="submit" name="update" class="btn btn-success editbtn">Update</button>
                 </div>
             </div>
+
+
+            </form>
         </div>
     </div>
 
@@ -291,7 +306,12 @@ $profit = $tot - $tot2;
     <!-- ######################################################################################## -->
 
 
+<?php
 
+
+
+
+?>
 
 
 
@@ -316,33 +336,41 @@ $profit = $tot - $tot2;
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
-            $(document).ready(function() {
-                
-                $(document).on('click','.editbtn',function(){
-                    var itemCode=$(this).attr('id');
-                    $.ajax({
-                        url:"fetch.php",
-                        method:"POST",
-                        data:{itemCode:itemCode},
-                        dataType:"json",
-                        success:function(data){
-                            $('#iname').val(data.item_code);
-                            $('#cat').val(data.category);
-                            $('#uprice').val(data.unit_price);
-                            $('#sprice').val(data.selling_price);
-                            $('#qt').val(data.quantity);
-                            $('#exampleModal').modal('show');
-                        }
+        $(document).ready(function() {
 
-                    });
+            $(document).on('click', '.editbtn', function() {
+                var itemCode = $(this).attr('id');
+                $.ajax({
+                    url: "fetch.php",
+                    method: "POST",
+                    data: {
+                        itemCode: itemCode
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        
+                        $('#icode').val(data.item_code);
+                        $('#iname').val(data.item_name);
+                        $('#cat').val(data.category);
+                        $('#uprice').val(data.unit_price);
+                        $('#sprice').val(data.selling_price);
+                        $('#qt').val(data.quantity);
+                        $('#exampleModal').modal('show');
+                    }
+
                 });
-
             });
 
-
-
-        
+        });
     </script>
+
+
+
+<script>
+                $(document).ready(function() {
+                    $('#example').DataTable();
+                });
+            </script>
 </body>
 
 </html>
