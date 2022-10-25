@@ -21,23 +21,32 @@ if (isset($_POST['update'])) {
     $unitprice = $_POST['uprice'];
     $sellingprice = $_POST['sprice'];
     $quantity = $_POST['qt'];
-    
 
-    
+
+
     $upquery = "UPDATE item SET item_name='$name', category='$Category', unit_price='$unitprice',selling_price='$sellingprice', quantity='$quantity' WHERE item_code = '$id'";
-    $query_run= mysqli_query($connection, $upquery);
+    $query_run = mysqli_query($connection, $upquery);
 
 
-    if($query_run)
-    {
-        echo "ok";
-    }
+    //     if($query_run)
+    //     {
+    //         echo "ok";
+    //     }
 
-    else
-    {
-        echo "ERROR";
-    }
+    //     else
+    //     {
+    //         echo "ERROR";
+    //     }
+
+
 }
+
+if (isset($_GET['del'])) {
+    $id = $_GET['icode'];
+    $delquary = "DELETE * FROM item WHERE item_code = '$id'";
+    mysqli_query($connection, $delquary);
+    header('location:edit.php');
+};
 
 
 
@@ -199,8 +208,13 @@ if (isset($_POST['update'])) {
                                     <td><?php echo $res['unit_price']; ?></td>
                                     <td><?php echo $res['selling_price']; ?></td>
                                     <td><?php echo $res['quantity']; ?></td>
+                                    
                                     <th scope="col"><button type="button" class="btn btn-success editbtn" name="edit" id="<?php echo $res['item_code']; ?>">Edit</button>
-                                        <button name="add_product" class="btn btn-primary" value="Add a product">Delete</button>
+                                       <?php echo " <a href='delete.php?id={$res['item_code']}'><button type='button' class='btn btn-primary delbtn' name='delete' >
+                                            Delete
+                                        </button></a> "; ?>
+
+                                        
                                     </th>
 
 
@@ -251,7 +265,7 @@ if (isset($_POST['update'])) {
 
 
     <!-- ######################################################################################## -->
-    <!-- pop up start -->
+    <!-- pop up for update start -->
 
 
 
@@ -264,7 +278,7 @@ if (isset($_POST['update'])) {
                 </div>
                 <div class="modal-body">
 
-                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
 
                         <input type="hidden" name="icode" id="icode">
                         <div class="mb-3">
@@ -287,7 +301,7 @@ if (isset($_POST['update'])) {
                             <label for="recipient-name" class="col-form-label">Quantity</label>
                             <input type="text" class="form-control" id="qt" name="qt">
                         </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -302,19 +316,11 @@ if (isset($_POST['update'])) {
 
 
 
-    <!-- popup end -->
+    <!-- update popup end -->
+
+
+
     <!-- ######################################################################################## -->
-
-
-<?php
-
-
-
-
-?>
-
-
-
 
 
 
@@ -335,6 +341,8 @@ if (isset($_POST['update'])) {
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
+
+    <!-- data pass to model for update -->
     <script>
         $(document).ready(function() {
 
@@ -348,7 +356,7 @@ if (isset($_POST['update'])) {
                     },
                     dataType: "json",
                     success: function(data) {
-                        
+
                         $('#icode').val(data.item_code);
                         $('#iname').val(data.item_name);
                         $('#cat').val(data.category);
@@ -365,12 +373,11 @@ if (isset($_POST['update'])) {
     </script>
 
 
-
-<script>
-                $(document).ready(function() {
-                    $('#example').DataTable();
-                });
-            </script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
 </body>
 
 </html>
