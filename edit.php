@@ -210,7 +210,7 @@ if (isset($_GET['del'])) {
                                     <td><?php echo $res['quantity']; ?></td>
                                     
                                     <th scope="col"><button type="button" class="btn btn-success editbtn" name="edit" id="<?php echo $res['item_code']; ?>">Edit</button>
-                                       <?php echo " <a href='delete.php?id={$res['item_code']}'><button type='button' class='btn btn-primary delbtn' name='delete' >
+                                       <?php echo " <a onclick=\"javascript:return confirm('Are you sure: to Delete Data')\" href='delete.php?id={$res['item_code']}'><button type='button' class='btn btn-primary delbtn' name='delete' >
                                             Delete
                                         </button></a> "; ?>
 
