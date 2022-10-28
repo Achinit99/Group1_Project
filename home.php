@@ -16,64 +16,6 @@
 
 
 
-<!-- 
-    <nav class="navbar navbar-expand-lg bg-danger navbar-light d-none d-lg-block" id="templatemo_nav_top">
-        <div class="container text-light">
-            <div class="w-100 d-flex justify-content-between">
-                <div>
-                    <i class="bi bi-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
-                    <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
-                </div>
-                <div>
-                    <i class="bi bi-arrow-clockwise" mx-0></i>
-                </div>
-            </div>
-        </div>
-    </nav>
-   
-
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark py-3" >
-        <div class="container-fluid ">
-            <h1><a class="navbar-brand text-white mx-5" href="#">GROUP1</a></h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white mx-3" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-3" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled text-white mx-3" href="#" tabindex="-1" aria-disabled="true">About</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    
-                    <i class="bi bi-bell mx-3 text-white"></i>
-                    <a href="cart.php"><i class="bi bi-cart text-white mx-2"></i></a>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
-    </form>
-    </div>
-    </nav>
- -->
-
-
-
-
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -84,15 +26,18 @@
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active h5" aria-current="page" href="#">Home</a>
+          <a class="nav-link active h5 mx-2" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-2">
           <a class="nav-link h5" href="#">Link</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-bag-heart h5"></i></a>
+        <li class="nav-item mx-2">
+          <a class="nav-link h5" href="#">Shop</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-cart-check-fill h5"></i></a>
+        </li>
+        <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="user.jpg" class="rounded-circle" height="25px" width="25px" alt="Cinque Terre">
           </a>
@@ -103,11 +48,7 @@
             <li><a class="dropdown-item" href="#">LOG OUT</a></li>
           </ul>
         </li>
-        
-        <!-- <li class="nav-item">
-        <i class="bi bi-bell text-black"></i>
-        </li> -->
-                    
+  
 
       </ul>
     
