@@ -1,3 +1,8 @@
+<?php
+include_once('connection.php');
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -11,7 +16,7 @@
     <link href="homestyle.css" rel="stylesheet">
     
     
-    <title>Hello, world!</title>
+    <title>NIBM GROUP 01</title>
     <style>
       /* @media only screen and (max-width: 991px) {
   .navmobile {
@@ -179,11 +184,37 @@
 
 
 
+<!-- test start -->
 
-    <section style="background-color: #eee;">
+
+
+
+<div class="container my-2">
+
+  
+
+   <?php
+
+   $select = mysqli_query($connection, "SELECT * FROM item");
+   
+   ?>
+
+
+<section style="background-color: #eee;">
   <div class="container py-5">
     <div class="row">
-      <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+
+
+     
+         <?php 
+           
+          $row = mysqli_fetch_assoc($select);
+          for($i=0;$i<6;$i++){ 
+          ?>
+        
+
+
+         <div class="col-md-12 col-lg-4 mb-4 mb-lg-0 my-3">
         <div class="card">
           <div class="d-flex justify-content-between p-3">
             <p class="lead mb-0">Today's Combo Offer</p>
@@ -193,17 +224,16 @@
               <p class="text-white mb-0 small">x4</p>
             </div>
           </div>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/4.webp"
-            class="card-img-top" alt="Laptop" />
+          <img src="<?php echo $row['image']; ?>" height="100" alt="laptop">
           <div class="card-body">
             <div class="d-flex justify-content-between">
-              <p class="small"><a href="#!" class="text-muted">Laptops</a></p>
+              <p class="small"><a href="#!" class="text-muted"><?php echo $row['item_name']; ?></a></p>
               <p class="small text-danger"><s>$1099</s></p>
             </div>
 
             <div class="d-flex justify-content-between mb-3">
-              <h5 class="mb-0">HP Notebook</h5>
-              <h5 class="text-dark mb-0">$999</h5>
+              <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
+              <h5 class="text-dark mb-0"><?php echo $row['selling_price']; ?></h5>
             </div>
 
             <div class="d-flex justify-content-between mb-2">
@@ -219,266 +249,17 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 mb-4 mb-md-4">
-        <div class="card">
-          <div class="d-flex justify-content-between p-3">
-            <p class="lead mb-0">Today's Combo Offer</p>
-            <div
-              class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
-              style="width: 35px; height: 35px;">
-              <p class="text-white mb-0 small">x2</p>
-            </div>
-          </div>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/7.webp"
-            class="card-img-top" alt="Laptop" />
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <p class="small"><a href="#!" class="text-muted">Laptops</a></p>
-              <p class="small text-danger"><s>$1199</s></p>
-            </div>
+      <?php } ?>
 
-            <div class="d-flex justify-content-between mb-3">
-              <h5 class="mb-0">HP Envy</h5>
-              <h5 class="text-dark mb-0">$1099</h5>
-            </div>
 
-            <div class="d-flex justify-content-between mb-2">
-              <p class="text-muted mb-0">Available: <span class="fw-bold">7</span></p>
-              <div class="ms-auto text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="col-md-6 col-lg-4 mb-4 mb-md-4">
-        <div class="card">
-          <div class="d-flex justify-content-between p-3">
-            <p class="lead mb-0">Today's Combo Offer</p>
-            <div
-              class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
-              style="width: 35px; height: 35px;">
-              <p class="text-white mb-0 small">x3</p>
-            </div>
-          </div>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/5.webp"
-            class="card-img-top" alt="Gaming Laptop" />
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <p class="small"><a href="#!" class="text-muted">Laptops</a></p>
-              <p class="small text-danger"><s>$1399</s></p>
-            </div>
-
-            <div class="d-flex justify-content-between mb-3">
-              <h5 class="mb-0">Toshiba B77</h5>
-              <h5 class="text-dark mb-0">$1299</h5>
-            </div>
-
-            <div class="d-flex justify-content-between mb-2">
-              <p class="text-muted mb-0">Available: <span class="fw-bold">5</span></p>
-              <div class="ms-auto text-warning">
-                <i class="fa fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 mb-md-4">
-        <div class="card">
-          <div class="d-flex justify-content-between p-3">
-            <p class="lead mb-0">Today's Combo Offer</p>
-            <div
-              class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
-              style="width: 35px; height: 35px;">
-              <p class="text-white mb-0 small">x2</p>
-            </div>
-          </div>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/7.webp"
-            class="card-img-top" alt="Laptop" />
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <p class="small"><a href="#!" class="text-muted">Laptops</a></p>
-              <p class="small text-danger"><s>$1199</s></p>
-            </div>
-
-            <div class="d-flex justify-content-between mb-3">
-              <h5 class="mb-0">HP Envy</h5>
-              <h5 class="text-dark mb-0">$1099</h5>
-            </div>
-
-            <div class="d-flex justify-content-between mb-2">
-              <p class="text-muted mb-0">Available: <span class="fw-bold">7</span></p>
-              <div class="ms-auto text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-       
-    </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-<!-- new product list start -->
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-<div class="trends">
-    <div class="bbb_background"></div>
-    <div class="bbb_overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="bbb_container">
-                    
-                    <div class="bbb_slider_nav">
-                        <div class="bbb_prev bbb_nav"><i class="fas fa-angle-left ml-auto"></i></div>
-                        <div class="bbb_next bbb_nav"><i class="fas fa-angle-right ml-auto"></i></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="bbb_slider_container">
-                    <div class="owl-carousel owl-theme bbb_slider">
-                        <div class="owl-item">
-                            <div class="bbb_item is_new">
-                                <div class="bbb_image d-flex flex-column align-items-center justify-content-center"><img src="https://i.imgur.com/9XOqCSE.jpg" alt=""></div>
-                                <div class="bbb_content">
-                                    <div class="bbb_category"><a href="#">Smart Phones</a></div>
-                                    <div class="bbb_info clearfix">
-                                        <div class="bbb_name"><a href="#">Alcatel Mobile</a></div>
-                                        <div class="bbb_price">₹13790</div>
-                                    </div>
-                                </div>
-                                <ul class="bbb_marks">
-                                    <li class="bbb_mark bbb_discount">-25%</li>
-                                    <li class="bbb_mark bbb_new">new</li>
-                                </ul>
-                                <div class="bbb_fav"><i class="fas fa-heart"></i></div>
-                            </div>
-                        </div>
-                        <div class="owl-item">
-                            <div class="bbb_item">
-                                <div class="bbb_image d-flex flex-column align-items-center justify-content-center"><img src="https://i.imgur.com/PIX2bzP.jpg" alt=""></div>
-                                <div class="bbb_content">
-                                    <div class="bbb_category"><a href="#">LED TV</a></div>
-                                    <div class="bbb_info clearfix">
-                                        <div class="bbb_name"><a href="#">MI LED</a></div>
-                                        <div class="bbb_price">₹33790</div>
-                                    </div>
-                                </div>
-                                <ul class="bbb_marks">
-                                    <li class="bbb_mark bbb_discount">-25%</li>
-                                    <li class="bbb_mark bbb_new">new</li>
-                                </ul>
-                                <div class="bbb_fav"><i class="fas fa-heart"></i></div>
-                            </div>
-                        </div>
-                        <div class="owl-item">
-                            <div class="bbb_item is_new">
-                                <div class="bbb_image d-flex flex-column align-items-center justify-content-center"><img src="https://i.imgur.com/GEvakkz.jpg" alt=""></div>
-                                <div class="bbb_content">
-                                    <div class="bbb_category"><a href="#">Mobile Phones</a></div>
-                                    <div class="bbb_info clearfix">
-                                        <div class="bbb_name"><a href="#">MI Mobile</a></div>
-                                        <div class="bbb_price">₹13079</div>
-                                    </div>
-                                </div>
-                                <ul class="bbb_marks">
-                                    <li class="bbb_mark bbb_discount">-25%</li>
-                                    <li class="bbb_mark bbb_new">new</li>
-                                </ul>
-                                <div class="bbb_fav"><i class="fas fa-heart"></i></div>
-                            </div>
-                        </div>
-                        <div class="owl-item">
-                            <div class="bbb_item is_new">
-                                <div class="bbb_image d-flex flex-column align-items-center justify-content-center"><img src="https://i.imgur.com/u94q4wq.jpg" alt=""></div>
-                                <div class="bbb_content">
-                                    <div class="bbb_category"><a href="#">Power Bank</a></div>
-                                    <div class="bbb_info clearfix">
-                                        <div class="bbb_name"><a href="#">MI Powerbank</a></div>
-                                        <div class="bbb_price">₹2379</div>
-                                    </div>
-                                </div>
-                                <ul class="bbb_marks">
-                                    <li class="bbb_mark bbb_discount">-25%</li>
-                                    <li class="bbb_mark bbb_new">new</li>
-                                </ul>
-                                <div class="bbb_fav"><i class="fas fa-heart"></i></div>
-                            </div>
-                        </div>
-                        <div class="owl-item">
-                            <div class="bbb_item">
-                                <div class="bbb_image d-flex flex-column align-items-center justify-content-center"><img src="https://i.imgur.com/u94q4wq.jpg" alt=""></div>
-                                <div class="bbb_content">
-                                    <div class="bbb_category"><a href="#">Power Bank</a></div>
-                                    <div class="bbb_info clearfix">
-                                        <div class="bbb_name"><a href="#">HP Powerbank</a></div>
-                                        <div class="bbb_price">₹3379</div>
-                                    </div>
-                                </div>
-                                <ul class="bbb_marks">
-                                    <li class="bbb_mark bbb_discount">-25%</li>
-                                    <li class="bbb_mark bbb_new">new</li>
-                                </ul>
-                                <div class="bbb_fav"><i class="fas fa-heart"></i></div>
-                            </div>
-                        </div>
-                        <div class="owl-item">
-                            <div class="bbb_item is_new">
-                                <div class="bbb_image d-flex flex-column align-items-center justify-content-center"><img src="https://i.imgur.com/f2rCLOO.jpg" alt=""></div>
-                                <div class="bbb_content">
-                                    <div class="bbb_category"><a href="#">Mobile Phones</a></div>
-                                    <div class="bbb_info clearfix">
-                                        <div class="bbb_name"><a href="#">Gionee phone</a></div>
-                                        <div class="bbb_price">₹10379</div>
-                                    </div>
-                                </div>
-                                <ul class="bbb_marks">
-                                    <li class="bbb_mark bbb_discount">-25%</li>
-                                    <li class="bbb_mark bbb_new">new</li>
-                                </ul>
-                                <div class="bbb_fav"><i class="fas fa-heart"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 
 
 
-<!-- new product list end -->
-
-
 
 
 
@@ -493,190 +274,124 @@
 
 
     
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
 
-    <!-- Footer -->
-<footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
 
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-
-      <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Form -->
-    <section class="">
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example21" class="form-control" />
-              <label class="form-label" for="form5Example21">Email address</label>
-            </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Subscribe
-            </button>
-          </div>
-          <!--Grid column-->
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
         </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
+        <!-- Grid column -->
 
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
-      </p>
-    </section>
-    <!-- Section: Text -->
-
-    <!-- Section: Links -->
-    <section class="">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
         </div>
-        <!--Grid column-->
+        <!-- Grid column -->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
         </div>
-        <!--Grid column-->
+        <!-- Grid column -->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+        <!-- Grid column -->
       </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-  </div>
-  <!-- Grid container -->
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright: Group 1
-    
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 Copyright GROUP 1 NIBM SE
+   
   </div>
   <!-- Copyright -->
 </footer>
