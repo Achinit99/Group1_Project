@@ -31,9 +31,9 @@ include_once('connection.php');
 <body>
 
 
- <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
+ <nav class="navbar fixed-top navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <a class="navbar-brand" href="#"><img src="logo2.png" height="70px" width="70px" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -116,8 +116,8 @@ include_once('connection.php');
   <section>
    
     <div class="row my-3">
-      <div class="col-xl-3 col-sm-6 col-12 mb-4">
-        <div class="card">
+      <div class=" col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card ">
           <div class="card-body">
             <div class="d-flex px-md-1">
               <div class="align-self-center">
@@ -189,6 +189,7 @@ include_once('connection.php');
 
 
 
+
 <div class="container my-2">
 
   
@@ -201,18 +202,20 @@ include_once('connection.php');
 
 
 <section style="background-color: #eee;">
+<div class="prosec">
   <div class="container py-5">
+  
     <div class="row">
 
 
      
          <?php 
            
-          $row = mysqli_fetch_assoc($select);
+         
           for($i=0;$i<6;$i++){ 
+            $row = mysqli_fetch_assoc($select);
           ?>
         
-
 
          <div class="col-md-12 col-lg-4 mb-4 mb-lg-0 my-3">
         <div class="card">
@@ -222,9 +225,9 @@ include_once('connection.php');
               class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
               style="width: 35px; height: 35px;">
               <p class="text-white mb-0 small">x4</p>
-            </div>
+            </div>    echo $row['image'];
           </div>
-          <img src="<?php echo $row['image']; ?>" height="100" alt="laptop">
+          <?php echo "<img src='uploaded_img/".$row['image']."' >"; ?>
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <p class="small"><a href="#!" class="text-muted"><?php echo $row['item_name']; ?></a></p>
@@ -257,6 +260,7 @@ include_once('connection.php');
 </section>
 </div>
 
+</div>
 
 
 
@@ -272,10 +276,11 @@ include_once('connection.php');
 
 
 
+<dic class="foo"></dic>
 
     
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start  text-muted">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
@@ -387,18 +392,17 @@ include_once('connection.php');
     </div>
   </section>
   <!-- Section: Links  -->
-
+<div class="fooend">
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2022 Copyright GROUP 1 NIBM SE
    
   </div>
+          </div>
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
-
-
+ </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

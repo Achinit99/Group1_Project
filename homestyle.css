@@ -6,6 +6,58 @@
 
 
 
+:root {
+    --primary: #EB1616;
+    --secondary: #191C24;
+    --light: #6C7293;
+    --dark: rgb(29, 53, 87);
+    --active: rgb(52, 78, 65);
+}
+
+
+.card-body{
+    background: var(--primary);
+}
+
+body{
+     background: var(--secondary);
+}
+
+
+.card{
+    background: var(--light);
+}
+
+
+.navbar{
+    background: var(--primary);
+}
+
+a:link {
+    text-decoration: none;
+  }
+
+a{
+    color: var(--secondary);
+}
+
+.nav-link{
+    color: var(--secondary);
+}
+
+
+.prosec{
+    background: var(--secondary);
+}
+
+
+footer{
+    color: var(--secondary);
+}
 
 
 
+.fooend{
+    background: var(--primary);
+    color: var(--secondary);
+}
