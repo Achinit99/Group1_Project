@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="homestyle.css" rel="stylesheet">
+    
+    
     <title>Hello, world!</title>
     <style>
       /* @media only screen and (max-width: 991px) {
@@ -36,10 +38,10 @@
           <a class="nav-link active h5 mx-2" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link h5" href="#">Link</a>
+          <a class="nav-link h5" href="#">Shop</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link h5" href="#">Shop</a>
+          <a class="nav-link h5" href="#">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="bi bi-cart-check-fill h5"></i></a>
@@ -71,7 +73,7 @@
 </nav>
 
 
-<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -99,68 +101,81 @@
 </div>
 
 
-<!-- cards start -->
 
-<div class="row m-12 mx-4 my-2 ">
-<div class="card mb-3" style="max-width: 340px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="free.jpeg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">FREE SHIPPING</h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>  -->
+<!-- card start -->
+
+
+
+
+<div class="container-fluid ">
+  <section>
+   
+    <div class="row my-3">
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex px-md-1">
+              <div class="align-self-center">
+              <i class="bi bi-truck h1 mx-3"></i>
+              </div>
+              <div class="text-center mx-3">
+                <h5>FAST DELIVERY</h5>
+                <P>Island wide Delivery</P>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-  <div class="card mb-3" style="max-width: 340px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>  -->
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex px-md-1">
+              <div class="align-self-center">
+              <i class="bi bi-credit-card h1 mx-3"></i>
+              </div>
+              <div class="text-center mx-3">
+                <h5>SAFE PAYMENT</h5>
+                <P>100% secure payment</P>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 340px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>  -->
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex px-md-1">
+              <div class="align-self-center">
+              <i class="bi bi-safe h1 mx-3"></i>
+              </div>
+              <div class="text-center mx-3">
+                <h5>SHOP SAFELY</h5>
+                <P>World's No1 IT Brands</P>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 340px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>  -->
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex px-md-1">
+              <div class="align-self-center">
+              <i class="bi bi-people-fill h1 mx-3"></i>
+              </div>
+              <div class="text-center mx-3">
+                <h5>FRIENDLY SERVICE</h5>
+                <P>Messaging Help Center</P>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+  </section>
   </div>
-</div>
-</div>
 
 
-<!-- 
-cards ebd -->
-
-
+<!-- card end -->
 
 
 
@@ -339,10 +354,7 @@ cards ebd -->
         <div class="row">
             <div class="col-lg-3">
                 <div class="bbb_container">
-                    <h2 class="bbb_title">Latest Products 2019</h2>
-                    <div class="bbb_text">
-                        <p>Find the latest products in 2019</p>
-                    </div>
+                    
                     <div class="bbb_slider_nav">
                         <div class="bbb_prev bbb_nav"><i class="fas fa-angle-left ml-auto"></i></div>
                         <div class="bbb_next bbb_nav"><i class="fas fa-angle-right ml-auto"></i></div>
