@@ -65,8 +65,8 @@ include_once('connection.php');
 
         <li class="nav-item">
         <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control bg-dark border-0 me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
         </form>
         </li>
 
@@ -225,7 +225,7 @@ include_once('connection.php');
               class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
               style="width: 35px; height: 35px;">
               <p class="text-white mb-0 small">x4</p>
-            </div>    echo $row['image'];
+            </div>   
           </div>
           <?php echo "<img src='uploaded_img/".$row['image']."' >"; ?>
           <div class="card-body">
