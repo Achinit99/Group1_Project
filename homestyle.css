@@ -9,7 +9,7 @@
 :root {
     --primary: #EB1616;
     --secondary: #191C24;
-    --light: #6C7293;
+    --light: #EB1616;
     --dark: rgb(29, 53, 87);
     --active: rgb(52, 78, 65);
 }
@@ -31,6 +31,7 @@ body{
 
 .navbar{
     background: var(--primary);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 a:link {
