@@ -42,10 +42,10 @@ include_once('connection.php');
             <div class="collapse navbar-collapse justify-content-end navmobile" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active h5 mx-2" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active h5 mx-2" aria-current="page" href="home.php">Home</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link h5" href="#">Shop</a>
+                        <a class="nav-link h5" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link h5" href="#">About</a>
