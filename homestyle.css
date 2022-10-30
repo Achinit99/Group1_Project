@@ -1,7 +1,7 @@
-.carousel-caption{
+.carousel-caption {
     bottom: 140px;
     padding-left: 0px;
-    padding-right: 400px;  
+    padding-right: 400px;
 }
 
 
@@ -15,50 +15,128 @@
 }
 
 
-.card-body{
+.card-body {
     background: var(--primary);
 }
 
-body{
-     background: var(--secondary);
-}
-
-
-.card{
-    background: var(--light);
-}
-
-
-.navbar{
-    background: var(--primary);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-}
-
-a:link {
-    text-decoration: none;
-  }
-
-a{
-    color: var(--secondary);
-}
-
-.nav-link{
-    color: var(--secondary);
-}
-
-
-.prosec{
+body {
     background: var(--secondary);
 }
 
 
-footer{
+.card {
+    background: var(--light);
+}
+
+
+.navbar {
+    background: var(--primary);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a {
+    color: var(--secondary);
+}
+
+.nav-link {
+    color: var(--secondary);
+}
+
+
+.prosec {
+    background: var(--secondary);
+}
+
+
+footer {
     color: var(--secondary);
 }
 
 
 
-.fooend{
+.fooend {
     background: var(--primary);
     color: var(--secondary);
 }
+
+
+h3{
+    color: aliceblue;
+    text-align: center;
+}
+
+
+h5{
+    color: aliceblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    cursor: pointer
+}
+
+.hd {
+    font-size: 25px;
+    font-weight: 550
+}
+
+.card.hover,
+.card:hover {
+    box-shadow: 0 20px 40px rgba(241, 9, 9, 0.2)
+}
+
+.img {
+    margin-bottom: 35px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222)
+}
+
+.card-title {
+    font-weight: 600
+}
+
+button.focus,
+button:focus {
+    outline: 0;
+    box-shadow: none !important
+}
+
+.ft {
+    margin-top: 25px
+}
+
+.chk {
+    margin-bottom: 5px
+}
+
+.rck {
+    margin-top: 20px;
+    padding-bottom: 15px
+}
+
+
+.c2{
+    background-color: rgb(32, 32, 33);
+    padding-top: 30px;
+}
+
+
+
+
+
+

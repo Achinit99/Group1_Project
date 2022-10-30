@@ -14,6 +14,14 @@ include_once('connection.php');
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="homestyle.css" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
     
     
     <title>NIBM GROUP 01</title>
@@ -184,10 +192,8 @@ include_once('connection.php');
 
 
 
-<!-- test start -->
 
-
-
+<!-- product start -->
 
 
 <div class="container my-2">
@@ -264,7 +270,191 @@ include_once('connection.php');
 
 
 
+<!-- new 2 start -->
 
+<div class='container-fluid mx-auto mt-5 mb-5 col-12' style="text-align: center">
+    <h3><div class="hd">Why People Believe in Us</div></h3>
+    <p><small class="text-muted">Always render more and better service than <br />is expected of you, no matter what your ask may be.</small></p>
+    <div class="row" style="justify-content: center">
+        <div class="card col-md-4 col-12 mx-2">
+            <div class="card-content">
+                <div class="card-body"> <img class="img" src="https://i.imgur.com/S7FJza5.png" />
+                    <div class="shadow"></div>
+                    <div class="card-title"> We're Free </div>
+                    <div class="card-subtitle">
+                        <p> <small >We spent thousands of hours creating on algorithm that does this for you in seconds. We collect a small fee from the professional after they meet your</small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 col-12 ml-2">
+            <div class="card-content">
+                <div class="card-body"> <img class="img" src="https://i.imgur.com/xUWJuHB.png" />
+                    <div class="card-title"> We're Unbiased </div>
+                    <div class="card-subtitle">
+                        <p> <small> We don't accept ads from anyone. We use actual data to match you who the best person for each job </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-4 col-12 ml-2 mx-2">
+            <div class="card-content">
+                <div class="card-body"> <img class="img rck" src="https://i.imgur.com/rG3CGn3.png" />
+                    <div class="card-title"> We Guide you </div>
+                    <div class="card-subtitle">
+                        <p> <small>Buying or selling a home is often the largest transaction anyone does in their life. we guide you through the process so that you can be confident in reaching your dream outcome.</small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<!-- new 3 end -->
+
+
+
+
+<!-- new section strat -->
+
+<div class="c2">
+
+<h3>Customer reviews</h3>
+
+     <div class="accordion d-flex justify-content-center align-items-center height" id="accordionExample">
+
+
+         <div class="row">
+
+             <div class="col-md-6 ">
+                 
+               <div class="p-3 ">
+
+                 <ul class="testimonial-list">
+                   <li >
+                    
+                      <div class="card p-3 my-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                        <div class="d-flex flex-row align-items-center">
+
+                          <img src="https://i.imgur.com/udGH5tO.jpg" width="50" class="rounded-circle">
+
+                          <div class="d-flex flex-column ml-2 mx-4">
+
+                            <span class="font-weight-normal">Achini Thathsarani</span>
+                            <span>Kurunegala, Sri lanaka</span>
+                            
+                          </div>
+                          
+                        </div>
+                        
+                      </div>   
+                   </li>
+
+                   <li>
+                    <div class="card p-3 my-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                        <div class="d-flex flex-row align-items-center">
+
+                          <img src="https://i.imgur.com/G1pXs7D.jpg " width="50" class="rounded-circle">
+
+                          <div class="d-flex flex-column ml-2 mx-4">
+
+                            <span class="font-weight-normal">Avishka Supun</span>
+                            <span>Kurunegala, Sri lanakaa</span>
+                            
+                          </div>
+                          
+                        </div>
+                        
+                      </div> 
+                   </li>
+
+                   <li>
+                    <div class="card p-3 my-2" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+                        <div class="d-flex flex-row align-items-center">
+
+                          <img src="https://i.imgur.com/Uz4FjGZ.jpg" width="50" class="rounded-circle">
+
+                          <div class="d-flex flex-column ml-2 mx-4">
+
+                            <span class="font-weight-normal">Luke Harper</span>
+                            <span>Sales Team Lead,Sketch</span>
+                            
+                          </div>
+                          
+                        </div>
+                        
+                      </div> 
+                   </li>
+
+                 </ul>
+                 </div>
+             </div>
+
+             <div class="col-md-6">
+              <div class="p-3 testimonials-margin">
+                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                     <div class="card-body">
+                         <h4>It was a great experience</h4>
+                         <div class="ratings">
+
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          
+                           
+                         </div>
+
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                     </div>
+                 </div>
+
+                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                     <div class="card-body">
+                         <h4>Thanks for this great service</h4>
+                         <div class="ratings">
+
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                           
+                         </div>
+
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                     </div>
+                 </div>
+
+                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                     <div class="card-body">
+                         <h4>You all are awesome thanks alot</h4>
+                         <div class="ratings">
+
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                           
+                         </div>
+
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                     </div>
+                 </div>
+                 </div>
+
+             </div>
+
+         </div>
+     </div>
+
+ </div>
+
+
+<!-- newm section end -->
 
 
 
