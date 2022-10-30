@@ -271,7 +271,7 @@ include_once('connection.php');
 
 
 <!-- new 2 start -->
-
+<div class="c2">
 <div class='container-fluid mx-auto mt-5 mb-5 col-12' style="text-align: center">
     <h3><div class="hd">Why People Believe in Us</div></h3>
     <p><small class="text-muted">Always render more and better service than <br />is expected of you, no matter what your ask may be.</small></p>
@@ -310,6 +310,7 @@ include_once('connection.php');
     </div>
    
 </div>
+          </div>
 
 <!-- new 3 end -->
 
@@ -318,7 +319,7 @@ include_once('connection.php');
 
 <!-- new section strat -->
 
-<div class="c2">
+
 
 <h3>Customer reviews</h3>
 
@@ -454,17 +455,7 @@ include_once('connection.php');
  </div>
 
 
-<!-- newm section end -->
-
-
-
-
-
-
-
-
-
-
+<!-- new section end -->
 
 <dic class="foo"></dic>
 
