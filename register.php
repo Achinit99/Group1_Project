@@ -2,45 +2,7 @@
  session_start(); 
 
 include_once('connection.php');
-if (isset($_POST['submit'])) {
-    $error = array();
-    if (!isset($_POST['uname']) || strlen(trim($_POST['uname'])) < 1) {
-        $error[] = 'User name is invalid or empty';
-    }
 
-    if (!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
-        $error[] = 'PASSWORD is invalid or empty';
-    }
-
-    if (empty($error)) {
-        $uname = mysqli_real_escape_string($connection, $_POST['uname']);
-        $password = mysqli_real_escape_string($connection, $_POST['password']);
-
-
-        $sql = "SELECT * FROM user 
-        WHERE name='{$uname}'
-        AND password='{$password}'
-        LIMIT 1";
-
-        $result = mysqli_query($connection, $sql);
-
-        if ($result) {
-
-            if (mysqli_num_rows($result) == 1) {
-                $_SESSION['user'] = $uname;
-                header('Location:index2.php');
-        
-            } else {
-                $error[] = 'username and password invalid';
-            }
-        } else {
-            $error[] = 'Query fails';
-        }
-    } else {
-        $error[] = 'PASSWORD is invalid or empty';
-    }
-} // function that Destroys Session 
-  
 ?>
 
 
@@ -87,17 +49,21 @@ if (isset($_POST['submit'])) {
                                     <input type="password" name="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" />
 
                                 </div>
+                                <div class="form-outline mb-4">
+                                    <input type="password" name="password2" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Re-Password" />
+
+                                </div>
 
                                 <!-- Checkbox -->
                                 <div class=" mb-4">
                                     <!-- <input class="form-check-input me-2" type="checkbox" value="" id="form1Example3" /> -->
                                     <!-- <label class="form-check-label text-light" for="form1Example3"> Remember password </label> -->
-                                    <a href="register.php"><p class="text-light">Register now?</p></a>
+                                    <a href="login.php"><p class="text-light">Login now?</p></a>
                                     
                                 </div>
                                
 
-                                <button name="submit" type=" button" class="btn btn-outline-light me-3" href="login.php">LOGIN<i class="bi bi-box-arrow-in-right"></i></button>
+                                <button name="submit" type=" button" class="btn btn-outline-light me-3" href="register.php">Register<i class="bi bi-box-arrow-in-right"></i></button>
                             
                         </div>
                     </div>

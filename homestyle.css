@@ -7,9 +7,9 @@
 
 
 :root {
-    --primary: #EB1616;
+    --primary: #CF0A0A;
     --secondary: #191C24;
-    --light: #EB1616;
+    --light: #CF0A0A;
     --dark: rgb(29, 53, 87);
     --active: rgb(52, 78, 65);
 }
