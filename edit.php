@@ -98,18 +98,19 @@ if (isset($_GET['del'])) {
         <!-- Sidebar Start -->
         <div class="sidebar pe-0 pb-3 ">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ADMIN</h3>
-                </a>
+                 <!-- <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h4 class="text"><img src="logo2.png" width="50" height="50" alt=""></h4>
+                </a> -->
+                
 
 
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative ">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <img class="" src="logo2.png" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"><?php echo $adname ?></h6>
+                        <h6 class="mb-0"><?php echo $adname?></h6>
                         <span>Admin</span>
                     </div>
                 </div>
