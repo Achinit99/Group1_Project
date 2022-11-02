@@ -2,10 +2,23 @@
  session_start(); 
 
 include_once('connection.php');
+if (isset($_POST['submit2'])) {
+   $user_name = $_POST['uname'];
+   $password = $_POST['password'];
+   $password2 = $_POST['password2'];
+   
+   if($password == $password2){
+    $insert = "INSERT INTO user(name, password) VALUES('$user_name', '$password')";
+    $add = mysqli_query($connection,$insert);
+   
+
+}
+else{
+    $message[] = 'please fill out all';
+}
+}
 
 ?>
-
-
 
 
 <html>
@@ -28,6 +41,16 @@ include_once('connection.php');
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <h3 class="mb-5"><img src="logo2.png" width="140px" height="170px" alt=""></h3>
+                <?php
+
+                    if(isset($message)){
+                    foreach($message as $msg){
+                    echo '<h6 class="mb-4 text-danger ">'.$msg.'</h6>';
+
+                        }
+                    }
+
+?>
                     <!-- <div class="card shadow-2-strong" style="border-radius: 1rem;"> -->
                         <div class="card-body p-5 text-center" style="background-color: #191C24;">
 
@@ -63,7 +86,7 @@ include_once('connection.php');
                                 </div>
                                
 
-                                <button name="submit" type=" button" class="btn btn-outline-light me-3" href="register.php">Register<i class="bi bi-box-arrow-in-right"></i></button>
+                                <button name="submit2" type=" button" class="btn btn-outline-light me-3" href="register.php">Register<i class="bi bi-box-arrow-in-right"></i></button>
                             
                         </div>
                     </div>
