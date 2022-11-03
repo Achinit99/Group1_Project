@@ -61,7 +61,7 @@ else{
                             ?>
 
                             <!-- <h3 class="mb-5"><img src="logo2.png" width="100px" height="120px" alt=""></h3> -->
-                            <form action="login.php" method="post">
+                            <form action="register.php" method="post">
                                 <div class="form-outline mb-4">
 
                                     <input type="text" name="uname" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Username" />
