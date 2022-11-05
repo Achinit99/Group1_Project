@@ -45,14 +45,6 @@ if (isset($_POST['submit'])) {
             echo "0 results";
         }
 
-
-
-
-
-
-
-
-
         if ($result) {
 
             if (mysqli_num_rows($result) == 1) {

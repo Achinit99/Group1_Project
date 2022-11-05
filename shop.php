@@ -48,10 +48,10 @@ include_once('connection.php');
                         <a class="nav-link h5" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link h5" href="#">About</a>
+                        <a class="nav-link h5" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-cart-check-fill h5"></i></a>
+                        <a class="nav-link" href="cart.php"><i class="bi bi-cart-check-fill h5"></i></a>
                     </li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
