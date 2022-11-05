@@ -59,11 +59,11 @@ if (isset($_POST['submit'])) {
                 $_SESSION['user'] = $uname;
                 if($roll==1)
                 {
-                    header('Location:index.php');
+                    header('Location:index2.php');
                 }
                 else
                 {
-                    header('Location:index2.php');
+                    header('Location:home.php');
                 }
                 
             } else {
