@@ -75,8 +75,8 @@ include_once('connection.php');
               <img src="user.jpg" class="rounded-circle" height="25px" width="25px" alt="Cinque Terre">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="customerprofile.php">Profile</a></li>
+              <li><a class="dropdown-item" href="customerprofile.php">Settings</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
