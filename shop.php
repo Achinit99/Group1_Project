@@ -26,7 +26,14 @@ include_once('connection.php');
 
     <title>NIBM GROUP 01</title>
     <style>
+        .con{
+            margin-top: 100px;
+            align-items: center;
+            align-content: center;
 
+        
+        }
+       
     </style>
 </head>
 
@@ -82,197 +89,80 @@ include_once('connection.php');
     </nav>
 
 
+ <div class="con mx-1 ">
+    <div class="c2 d-flex justify-content-center">
 
-    <!-- section start -->
+<div id="myBtnContainer ">
+  <button class="btn active btn-secondary" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn btn-secondary" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn btn-secondary" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn btn-secondary" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn btn-secondary" onclick="filterSelection('colors')"> Colors</button>
+</div>
 
-
-<div class="cn">
-    <div class="container-fluid mt-5 mb-5">
-        <div class="row g-2">
-            <div class="col-md-3">
-                <div class="t-products p-2">
-                    <h6 class="text-uppercase">Computer & Periferals</h6>
-                    <div class="p-lists">
-                        <div class="d-flex justify-content-between mt-2"> <span>Laptops</span> <span>23</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>Desktops</span> <span>46</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>Monitors</span> <span>13</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>Mouse</span> <span>33</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>Keyboard</span> <span>12</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>Printer</span> <span>53</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>Mobiles</span> <span>203</span> </div>
-                        <div class="d-flex justify-content-between mt-2"> <span>CPU</span> <span>23</span> </div>
-                    </div>
-                </div>
-                <div class="processor p-2">
-                    <div class="heading d-flex justify-content-between align-items-center">
-                        <h6 class="text-uppercase">Processor</h6> <span>--</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Intel Core i7 </label> </div> <span>3</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i6 </label> </div> <span>4</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i3 </label> </div> <span>14</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Centron </label> </div> <span>8</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Pentinum </label> </div> <span>14</span>
-                    </div>
-                </div>
-                <div class="brand p-2">
-                    <div class="heading d-flex justify-content-between align-items-center">
-                        <h6 class="text-uppercase">Brand</h6> <span>--</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Apple </label> </div> <span>13</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Asus </label> </div> <span>4</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Dell </label> </div> <span>24</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Lenovo </label> </div> <span>18</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Acer </label> </div> <span>44</span>
-                    </div>
-                </div>
-                <div class="type p-2 mb-2">
-                    <div class="heading d-flex justify-content-between align-items-center">
-                        <h6 class="text-uppercase">Type</h6> <span>--</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Hybrid </label> </div> <span>23</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Laptop </label> </div> <span>24</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Desktop </label> </div> <span>14</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Touch </label> </div> <span>28</span>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Tablets </label> </div> <span>44</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="row g-2">
-                    <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-success">-25% OFF</span>
-                            <div class="text-center"> <img src="https://i.imgur.com/nOFet9u.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>XRD Active Shoes</h5> <span>$1,999.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-warning">SALE</span>
-                            <div class="text-center"> <img src="https://i.imgur.com/VY0R9aV.png" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Hygen Smart watch </h5> <span>$123.43</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4">
-                            <div class="text-center"> <img src="https://i.imgur.com/PSGrLdz.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Acer surface book 2.5</h5> <span>$1,999.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-success">-10% OFF</span>
-                            <div class="text-center"> <img src="https://i.imgur.com/OdRSpXG.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Dell XPS Surface</h5> <span>$1,245.89</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4">
-                            <!-- <span class="off bg-success">-25% OFF</span> -->
-                            <div class="text-center"> <img src="https://i.imgur.com/X2AwTCY.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Acer surface book 5.5</h5> <span>$2,999.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ">
-                        <div class="product py-4"> <span class="off bg-success">-5% OFF</span>
-                            <div class="text-center"> <img src="https://i.imgur.com/QQwcBpF.png" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Xps smart watch 5.0</h5> <span>$999.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-warning">SALE</span>
-                            <div class="text-center"> <img src="https://i.imgur.com/PSGrLdz.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Acer surface book 8.5</h5> <span>$3,999.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4">
-                            <div class="text-center"> <img src="https://i.imgur.com/m22OQy9.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Tyko Running shoes</h5> <span>$99.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product py-4">
-                            <div class="text-center"> <img src="https://i.imgur.com/OdRSpXG.jpg" width="200"> </div>
-                            <div class="about text-center">
-                                <h5>Dell surface book 5</h5> <span>$1,999.99</span>
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
 
 
+<!-- product start -->
+
+
+<div class="container my-2">
+<?php
+$select = mysqli_query($connection, "SELECT * FROM item");
+?>
+<section style="background-color: #eee;">
+  <div class="prosec">
+    <div class="container py-5">
+
+      <div class="row">
+        <?php
+        while($row=mysqli_fetch_assoc($select)) {  
+        ?>
+          <div class="col-md-12 col-lg-4 mb-4 mb-lg-0 my-3">
+            <div class="card">
+              <div class="d-flex justify-content-between p-3">
+                <p class="lead mb-0">Today's Combo Offer</p>
+                <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
+                  <a href="#" class="text-white mb-0 small"><i class="bi bi-cart-plus-fill"></i></a>
+                </div>
+              </div>
+              <?php echo "<img src='uploaded_img/" . $row['image'] . "' >"; ?>
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <p class="small"><a href="#!" class="text-muted"><?php echo $row['manufacturer']; ?></a></p>
+                  <p class="small text-danger"><s>$1099</s></p>
+                </div>
+
+                <div class="d-flex justify-content-between mb-3">
+                  <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
+                  <h5 class="text-dark mb-0"><?php echo $row['selling_price']; ?></h5>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                  <p class="text-muted mb-0">Available: <span class="fw-bold"><?php echo $row['quantity']; ?></span></p>
+                  <div class="ms-auto text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+
+
+      </div>
+    </div>
+</section>
+</div>
+
+</div>
+
+
+</div>
     <!-- 
 section end -->
 
