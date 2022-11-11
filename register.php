@@ -2,15 +2,35 @@
 
 include_once('connection.php');
 
-if(isset($_POST['submit2'])){
+
+if (isset($_POST['add_user'])) {
 
     $uname = $_POST['uname'];
     $password = $_POST['password'];
+    $password2 = $_POST['password2'];
 
-    $insert = "INSERT INTO user(name, password) VALUES('$uname', '$password')";
-    $upload = mysqli_query($connection,$insert);
-    
-}
+
+
+    if (empty($uname) || empty($password) || empty($password2)) {
+        $message[] = 'Please fill out all';
+    } else {
+
+        if ($password == $password2) {
+            $insert = "INSERT INTO user(name, password) VALUES('$uname', '$password')";
+            $upload = mysqli_query($connection, $insert);
+            if ($upload) {
+
+                $message[] = 'new User added successfully';
+            } else {
+                $message[] = 'could not add the New User';
+            }
+        }
+        else{
+            $message[] = 'Password Not Match';
+        }
+    }
+};
+
 
 ?>
 
@@ -31,17 +51,15 @@ if(isset($_POST['submit2'])){
 
 <body style="background-color: cadetblue" class="mr-3">
 
-
     <section class="vh-100" style="background-color: #CF0A0A;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <h3 class="mb-5"><img src="logo2.png" width="140px" height="170px" alt=""></h3>
-                   
-                    
+
                     <div class="card-body p-5 text-center" style="background-color: #191C24;">
 
-                       
+
                         <form action="register.php" method="post">
                             <div class="form-outline mb-4">
 
@@ -58,9 +76,9 @@ if(isset($_POST['submit2'])){
 
                             </div>
 
-                           
+
                             <div class=" mb-4">
-                              
+
                                 <a href="login.php">
                                     <p class="text-light">Login now?</p>
                                 </a>
@@ -68,7 +86,17 @@ if(isset($_POST['submit2'])){
                             </div>
 
 
-                            <button name="submit2" type=" button" class="btn btn-outline-light me-3" href="register.php">Register<i class="bi bi-box-arrow-in-right"></i></button>
+                            <button type=" button" name="add_user" class="btn btn-outline-light me-3" href="register.php">Register<i class="bi bi-box-arrow-in-right"></i></button>
+
+                            <?php
+
+                            if (isset($message)) {
+                                foreach ($message as $msg) {
+                                    echo '<h5 class=" mt-2 pt-4 text-center text-light">' . $msg . '</h5>';
+                                }
+                            }
+
+                            ?>
 
                     </div>
                 </div>

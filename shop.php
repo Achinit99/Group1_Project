@@ -119,7 +119,7 @@ $select = mysqli_query($connection, "SELECT * FROM item");
         while($row=mysqli_fetch_assoc($select)) {  
         ?>
           <div class="col-md-12 col-lg-4 mb-4 mb-lg-0 my-3">
-            <div class="card">
+           <?php echo" <div class='card filterDiv cars'> "?>
               <div class="d-flex justify-content-between p-3">
                 <p class="lead mb-0">Today's Combo Offer</p>
                 <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
