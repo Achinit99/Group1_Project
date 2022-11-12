@@ -41,10 +41,9 @@ include_once('dashtemp.php');
 <!DOCTYPE html>
 
 
-
             <!-- Sale & Revenue Start -->
 
-            <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
