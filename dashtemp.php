@@ -62,8 +62,8 @@
                     <a href="index2.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="add.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Add Product</a>
                     <a href="edit.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Edit Product</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Charts</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>User Message</a>
+                    <a href="orders.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Orders</a>
+                    <a href="charts.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Charts & Reports</a>
 
                 </div>
             </nav>
