@@ -9,18 +9,13 @@ include_once('header.php');
 
 <style>
         .gradient-custom {
-            /* fallback for old browsers */
-            background: #6a11cb;
-
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+          
         }
+
+        
     </style>
 
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
 
     <!-- cart start -->
 
@@ -57,18 +52,16 @@ include_once('header.php');
                                     <p>Color: blue</p>
                                     <p>Size: M</p>
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                        <i class="fas fa-trash"></i>
+                                     <i class="bi bi-trash3-fill"></i>
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
+                                   
                                     <!-- Data -->
                                 </div>
 
                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                     <!-- Quantity -->
                                     <div class="d-flex mb-4 " style="max-width: 300px">
-                                        <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <button class="btn btn-dark px-3 me-2" style="max-height: 40px;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                             <i class="bi bi-dash-lg"></i>
                                         </button>
 
@@ -77,7 +70,7 @@ include_once('header.php');
                                             <label class="form-label" for="form1">Quantity</label>
                                         </div>
 
-                                        <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <button class="btn btn-dark px-3 ms-2" style="max-height: 40px;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                             <i class="bi bi-plus-lg"></i>
                                         </button>
                                     </div>
@@ -116,10 +109,7 @@ include_once('header.php');
                                     <p>Size: M</p>
 
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                        <i class="fas fa-heart"></i>
+                                     <i class="bi bi-trash3-fill"></i>
                                     </button>
                                     <!-- Data -->
                                 </div>
@@ -127,7 +117,7 @@ include_once('header.php');
                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                     <!-- Quantity -->
                                     <div class="d-flex mb-4" style="max-width: 300px">
-                                        <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <button class="btn btn-dark px-3 me-2" style="max-height: 40px;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                             <i class="bi bi-dash-lg"></i>
                                         </button>
 
@@ -136,7 +126,7 @@ include_once('header.php');
                                             <label class="form-label" for="form1">Quantity</label>
                                         </div>
 
-                                        <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <button class="btn btn-dark px-3 me-2" style="max-height: 40px;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                             <i class="bi bi-plus-lg"></i>
                                         </button>
                                     </div>
@@ -179,10 +169,7 @@ include_once('header.php');
                                     <p>Size: M</p>
 
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                        <i class="fas fa-heart"></i>
+                                     <i class="bi bi-trash3-fill"></i>
                                     </button>
                                     <!-- Data -->
                                 </div>
@@ -190,7 +177,7 @@ include_once('header.php');
                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                     <!-- Quantity -->
                                     <div class="d-flex mb-4" style="max-width: 300px">
-                                        <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <button class="btn btn-dark px-3 me-2" style="max-height: 40px;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                             <i class="bi bi-dash-lg"></i>
                                         </button>
 
@@ -199,7 +186,7 @@ include_once('header.php');
                                             <label class="form-label" for="form1">Quantity</label>
                                         </div>
 
-                                        <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <button class="btn btn-dark px-3 me-2" style="max-height: 40px;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                             <i class="bi bi-plus-lg"></i>
                                         </button>
                                     </div>
@@ -249,14 +236,14 @@ include_once('header.php');
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-header py-3">
+                <div class="col-md-4 ">
+                    <div class="card mb-4 bg-light">
+                        <div class="card-header py-3 bg-light">
                             <h5 class="mb-0">Summary</h5>
                         </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="card-body bg-light">
+                            <ul class="list-group list-group-flush ">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 ">
                                     Products
                                     <span>$53.98</span>
                                 </li>
