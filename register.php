@@ -19,7 +19,7 @@ if (isset($_POST['add_user'])) {
             $insert = "INSERT INTO user(name, password) VALUES('$uname', '$password')";
             $upload = mysqli_query($connection, $insert);
             if ($upload) {
-
+                header('Location:login.php');
                 $message[] = 'new User added successfully';
             } else {
                 $message[] = 'could not add the New User';
