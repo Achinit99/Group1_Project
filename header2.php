@@ -55,7 +55,7 @@
             
           </li>
           <li>
-          <button type="button" class="btn btn-dark mx-2">Log in</button>
+         <a href="login.php"><button type="button" class="btn btn-dark mx-2">Log in</button></a> 
           </li>
          
 
