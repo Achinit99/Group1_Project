@@ -56,15 +56,13 @@ include_once('dashtemp.php');
 ?>
 
 
-
-
 <!DOCTYPE html>
 
 
-
+<u><h6 class="text-danger mx-4 mt-3">Admin / Edit Product</h6></u> 
 
             <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-2 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Products</h6>

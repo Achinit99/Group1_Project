@@ -59,9 +59,10 @@ include_once('dashtemp.php');
 
 <!DOCTYPE html>
 
+<u><h6 class="text-danger mx-4 mt-3">Admin / Add Product</h6></u> 
 
            <!-- add product -->
-           <div class="container-fluid pt-4 px-4">
+           <div class="container-fluid pt-2 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
