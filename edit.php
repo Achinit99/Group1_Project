@@ -124,8 +124,6 @@ include_once('dashtemp.php');
 
 
 
-
-
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-6">
                 <div class="bg-secondary rounded-top p-4">

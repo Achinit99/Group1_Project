@@ -5,11 +5,26 @@ session_start();
 if (!isset($_SESSION['user'])) {
   include_once('header2.php');
     // header('Location:login.php');
-
 }
 else{
     $adname=$_SESSION['user'];
     include_once('header.php');
+}
+
+
+if(isset($_POST['add_to_cart'])){
+
+    if(isset($_SESSION['cart'])){
+
+    }else{
+        $session_array= array(
+            
+            "name" => $_POST['name'],
+            "price" => $_POST['price']
+        );
+
+        $_SESSION['cart'][]=$session_array;
+    }
 }
 
 ?>
@@ -20,7 +35,7 @@ else{
      
     <style>
         .con{
-            margin-top: 100px;
+            margin-top: 120px;
             align-items: center;
             align-content: center; 
         }
@@ -29,7 +44,7 @@ else{
 
 
  <div class="con mx-1 ">
-    <div class="c2 d-flex justify-content-center">
+    <div class=" d-flex justify-content-center">
 
 <div id="myBtnContainer ">
   <button class="btn active btn-secondary" onclick="filterSelection('all')"> Show all</button>
@@ -46,23 +61,30 @@ else{
 
 
 <div class="container my-2">
-<?php
-$select = mysqli_query($connection, "SELECT * FROM item");
-?>
 <section style="background-color: #eee;">
   <div class="prosec">
     <div class="container py-5">
 
+  
       <div class="row">
         <?php
+        $select = mysqli_query($connection, "SELECT * FROM item");
         while($row=mysqli_fetch_assoc($select)) {  
         ?>
+       
           <div class="col-md-12 col-lg-4 mb-4 mb-lg-0 my-3">
            <?php echo" <div class='card filterDiv cars'> "?>
+
+           
               <div class="d-flex justify-content-between p-3">
                 <p class="lead mb-0">Today's Combo Offer</p>
                 <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
-                  <a href="#" class="text-white mb-0 small"><i class="bi bi-cart-plus-fill"></i></a>
+                
+                
+                <!-- <button type="submit" name="add_to_cart" class="btn btn-primary">
+                <i class="bi bi-cart-plus-fill"></i>
+                </button> -->
+                  <!-- <a href="#" class="text-white mb-0 small"><i class="bi bi-cart-plus-fill"></i></a> -->
                 </div>
               </div>
               <?php echo "<img src='uploaded_img/" . $row['image'] . "' >"; ?>
@@ -76,6 +98,7 @@ $select = mysqli_query($connection, "SELECT * FROM item");
                   <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
                   <h5 class="text-dark mb-0"><?php echo $row['selling_price']; ?></h5>
                 </div>
+                
 
                 <div class="d-flex justify-content-between mb-2">
                   <p class="text-muted mb-0">Available: <span class="fw-bold"><?php echo $row['quantity']; ?></span></p>
@@ -87,13 +110,33 @@ $select = mysqli_query($connection, "SELECT * FROM item");
                     <i class="fa fa-star"></i>
                   </div>
                 </div>
-              </div>
+
+        <form method="POST" action="shop.php">
+                <input type="hidden" name="name" value="<?= $row['item_name'] ?>">
+                <input type="hidden" name="price" value="<?= $row['selling_price'] ?>">
+                <input type="submit" name="add_to_cart" value="Add To Cart">       
+        </form>
+
+
+        </div>
             </div>
+            
           </div>
+          
+          
         <?php } ?>
 
 
-      </div>
+<h3>
+
+<?php
+    var_dump($_SESSION['cart']);
+?>
+
+</h3>
+
+      
+        </div>
     </div>
 </section>
 </div>
