@@ -47,11 +47,11 @@
 
 
                 <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative ">
+                    <div class="position-relative mt-3">
                         <img class="" src="logo2.png" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
-                    <div class="ms-3">
+                    <div class="ms-3 mt-3">
                         <h6 class="mb-0"><?php echo $adname?></h6>
                         <span>Admin</span>
                     </div>
@@ -75,14 +75,14 @@
         <div class="content">
 
             <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-2">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
+                <form class="d-none d-md-flex ms-4 mt-3">
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
@@ -112,3 +112,6 @@
                 </div>
             </nav>
             <!-- Navbar End -->
+
+
+           

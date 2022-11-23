@@ -40,10 +40,10 @@ include_once('dashtemp.php');
 
 <!DOCTYPE html>
 
-
+<u><h6 class="text-danger mx-3 mt-3">Admin / Home</h6></u> 
             <!-- Sale & Revenue Start -->
 
-            <div class="container-fluid pt-4">
+            <div class="container-fluid pt-2">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
