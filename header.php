@@ -27,6 +27,8 @@
     align-items: start;
   }
 } */
+
+
   </style>
 </head>
 
@@ -37,7 +39,8 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="home.php"><img src="logo2.png" height="70px" width="70px" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon text-light"></span>
+        <i class="bi bi-list h1"></i>
       </button>
       <div class="collapse navbar-collapse justify-content-end navmobile" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
