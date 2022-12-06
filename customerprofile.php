@@ -26,13 +26,7 @@ include_once('connection.php');
 
   <title>NIBM GROUP 01</title>
   <style>
-    /* @media only screen and (max-width: 991px) {
-  .navmobile {
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-  }
-} */
+
 
 .container{
     margin-top: 150px;
