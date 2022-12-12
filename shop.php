@@ -4,7 +4,7 @@ include_once('connection.php');
 session_start();
 if (!isset($_SESSION['user'])) {
   include_once('header2.php');
-    // header('Location:login.php');
+    
 }
 else{
     $adname=$_SESSION['user'];
