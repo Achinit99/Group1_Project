@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 include_once('connection.php');
 
 $query = "SELECT item_code, item_name, category, unit_price, selling_price, quantity FROM item";
-// $query2 = "SELECT quantity FROM stock";
+
 
 $result = mysqli_query($connection, $query);
 
