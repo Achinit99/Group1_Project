@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
     $query_run = mysqli_query($connection, $upquery);
 
 
-    //     if($query_run)
+   
     //     {
     //         echo "ok";
     //     }
