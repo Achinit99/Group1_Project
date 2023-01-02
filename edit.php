@@ -27,9 +27,6 @@ if (isset($_POST['update'])) {
     $upquery = "UPDATE item SET item_name='$name', category='$Category', unit_price='$unitprice',selling_price='$sellingprice', quantity='$quantity' WHERE item_code = '$id'";
     $query_run = mysqli_query($connection, $upquery);
 
-
-   
-  
     //         echo "ok";
     //     }
 
