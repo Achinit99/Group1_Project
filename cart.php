@@ -6,10 +6,57 @@ if (!isset($_SESSION['user'])) {
 
 }
 else{
-    $adname=$_SESSION['user'];
+    $aditem_item_name=$_SESSION['user'];
     include_once('header.php');
 }
 
+?>
+
+<?php
+
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+
+if(!empty($_GET["action"])) {
+switch($_GET["action"]) {
+	case "add":
+		if(!empty($_POST["quantity"])) {
+			$productByCode = $db_handle->runQuery("SELECT * FROM item WHERE item_code='" . $_GET["item_code"] . "'");
+			$itemArray = array($productByCode[0]["item_code"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_code'=>$productByCode[0]["item_code"], 'quantity'=>$_POST["quantity"], 'selling_price'=>$productByCode[0]["selling_price"], 'image'=>$productByCode[0]["image"]));
+			
+			if(!empty($_SESSION["cart_item"])) {
+				if(in_array($productByCode[0]["item_code"],array_keys($_SESSION["cart_item"]))) {
+					foreach($_SESSION["cart_item"] as $k => $v) {
+							if($productByCode[0]["item_code"] == $k) {
+								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+							}
+					}
+				} else {
+					$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+				}
+			} else {
+				$_SESSION["cart_item"] = $itemArray;
+			}
+		}
+	break;
+	case "remove":
+		if(!empty($_SESSION["cart_item"])) {
+			foreach($_SESSION["cart_item"] as $k => $v) {
+					if($_GET["item_code"] == $k)
+						unset($_SESSION["cart_item"][$k]);				
+					if(empty($_SESSION["cart_item"]))
+						unset($_SESSION["cart_item"]);
+			}
+		}
+	break;
+	case "empty":
+		unset($_SESSION["cart_item"]);
+	break;	
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,14 +64,64 @@ else{
 
 
 <style>
-        .gradient-custom {
-          
-        }
-
         
-    </style>
+.text1{
+  background-color: white;
+}
+        
+</style>
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+
+
+<!-- test cart start -->
+<div class="text1">
+
+<table class="tbl-cart" cellpadding="10" cellspacing="1">
+<tbody>
+<tr>
+<th style="text-align:left;">Name</th>
+<th style="text-align:left;">Code</th>
+<th style="text-align:right;" width="5%">Quantity</th>
+<th style="text-align:right;" width="10%">Unit Price</th>
+<th style="text-align:right;" width="10%">Price</th>
+<th style="text-align:center;" width="5%">Remove</th>
+</tr>	
+<?php		
+    foreach ($_SESSION["cart_item"] as $item){
+        
+		?>
+				<tr>
+				<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["item_name"]; ?></td>
+				<td><?php echo $item["item_code"]; ?></td>
+				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+				<td  style="text-align:right;"><?php echo "$ ".$item["selling_price"]; ?></td>
+				<td  style="text-align:right;"><?php echo "$ ". number_format($selling_price,2); ?></td>
+				<td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+				</tr>
+				<?php
+				// $total_quantity += $item["quantity"];
+				// $total_price += ($item["price"]*$item["quantity"]);
+		}
+		?>
+
+<tr>
+
+<td></td>
+</tr>
+</tbody>
+</table>		
+
+</div>
+
+<!-- test cart end -->
+
+
+
+
+
+
 
     <!-- cart start -->
 
@@ -75,7 +172,7 @@ else{
                                         </button>
 
                                         <div class="form-outline ">
-                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                                            <input id="form1" min="0" item_name="quantity" value="1" type="number" class="form-control" />
                                             <label class="form-label" for="form1">Quantity</label>
                                         </div>
 
@@ -85,11 +182,11 @@ else{
                                     </div>
                                     <!-- Quantity -->
 
-                                    <!-- Price -->
+                                    <!-- selling_price -->
                                     <p class="text-start text-md-center">
                                         <strong>$17.99</strong>
                                     </p>
-                                    <!-- Price -->
+                                    <!-- selling_price -->
                                 </div>
                             </div>
                             <!-- Single item -->
@@ -131,7 +228,7 @@ else{
                                         </button>
 
                                         <div class="form-outline">
-                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                                            <input id="form1" min="0" item_name="quantity" value="1" type="number" class="form-control" />
                                             <label class="form-label" for="form1">Quantity</label>
                                         </div>
 
@@ -141,11 +238,11 @@ else{
                                     </div>
                                     <!-- Quantity -->
 
-                                    <!-- Price -->
+                                    <!-- selling_price -->
                                     <p class="text-start text-md-center">
                                         <strong>$17.99</strong>
                                     </p>
-                                    <!-- Price -->
+                                    <!-- selling_price -->
                                 </div>
                             </div>
                             <!-- Single item -->
@@ -191,7 +288,7 @@ else{
                                         </button>
 
                                         <div class="form-outline">
-                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                                            <input id="form1" min="0" item_name="quantity" value="1" type="number" class="form-control" />
                                             <label class="form-label" for="form1">Quantity</label>
                                         </div>
 
@@ -201,11 +298,11 @@ else{
                                     </div>
                                     <!-- Quantity -->
 
-                                    <!-- Price -->
+                                    <!-- selling_price -->
                                     <p class="text-start text-md-center">
                                         <strong>$17.99</strong>
                                     </p>
-                                    <!-- Price -->
+                                    <!-- selling_price -->
                                 </div>
                             </div>
 

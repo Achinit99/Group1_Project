@@ -115,10 +115,8 @@ $db_handle = new DBController();
                   </div>
                 </div>
 
-        <form method="POST" action="shop.php">
-                <input type="hidden" name="name" value="<?= $row['item_name'] ?>">
-                <input type="hidden" name="price" value="<?= $row['selling_price'] ?>">
-                <input type="submit" name="add_to_cart" value="Add To Cart">       
+         <form method="post" action="cart.php?action=add&code=<?php echo $row["item_code"]; ?>">
+                <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>      
         </form>
 
 
@@ -153,38 +151,6 @@ $db_handle = new DBController();
 section end -->
 
 
-
-
-<!-- new product section start -->
-
-
-<div id="product-grid">
-	<div class="txt-heading">Products</div>
-	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM item ORDER BY id ASC");
-	if (!empty($product_array)) { 
-		foreach($product_array as $key=>$value){
-	?>
-		<div class="product-item">
-			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["item_code"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
-			<div class="product-tile-footer">
-			<div class="product-title"><?php echo $product_array[$key]["manufacturer"]; ?></div>
-			<div class="product-price"><?php echo "$".$product_array[$key]["item_name"]; ?></div>
-			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-			</div>
-			</form>
-		</div>
-	<?php
-		}
-	}
-	?>
-
-    <h1>test</h1>
-</div>
-
-
-<!-- new prodoct end -->
 
 
     <dic class="foo"></dic>
