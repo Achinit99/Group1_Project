@@ -98,6 +98,7 @@ switch($_GET["action"]) {
                         <!-- test cart st -->
 
 <?php		
+
     foreach ($_SESSION["cart_item"] as $item){
         
 		?>
@@ -106,6 +107,7 @@ switch($_GET["action"]) {
               <div class="row">
                                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                     <!-- Image -->
+                                    $directory = "mytheme/images/myimages";
                                     <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                                         <img src="<?php echo $item['image']; ?>" class="w-100" alt="img" />
                                         <a href="#!">
@@ -121,7 +123,7 @@ switch($_GET["action"]) {
                                     <p><?php echo "Brand: ".$item["manufacturer"]; ?></p>
                                     <p>Size: M</p>
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                     <a href="cart.php?action=remove&code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><i class="bi bi-trash3-fill">Remove Item</i></a>
+                                     <a href="cart.php?action=remove&item_code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><i class="bi bi-trash3-fill">Remove Item</i></a>
                                     </button>
                                    
                                     <!-- Data -->
@@ -147,7 +149,7 @@ switch($_GET["action"]) {
 
                                     <!-- selling_price -->
                                     <p class="text-start text-md-center">
-                                        <strong><?php echo "$ ".$item["selling_price"]; ?></strong>
+                                        <strong><?php echo "RS. ".$item["selling_price"]; ?></strong>
                                     </p>
                                     <!-- selling_price -->
                                 </div>
@@ -157,6 +159,7 @@ switch($_GET["action"]) {
 				// $total_quantity += $item["quantity"];
 				// $total_price += ($item["price"]*$item["quantity"]);
 		}
+   
 		?>
 
 <!-- test cart end -->
