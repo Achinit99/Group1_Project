@@ -119,11 +119,7 @@ switch($_GET["action"]) {
 
 
 
-
-
-
-
-    <!-- cart start -->
+<!-- cart start -->
 
 
     <section class="h-100 gradient-custom mt-5">
