@@ -75,51 +75,6 @@ switch($_GET["action"]) {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
 
 
-<!-- test cart start -->
-<div class="text1">
-
-<table class="tbl-cart" cellpadding="10" cellspacing="1">
-<tbody>
-<tr>
-<th style="text-align:left;">Name</th>
-<th style="text-align:left;">Code</th>
-<th style="text-align:right;" width="5%">Quantity</th>
-<th style="text-align:right;" width="10%">Unit Price</th>
-<th style="text-align:right;" width="10%">Price</th>
-<th style="text-align:center;" width="5%">Remove</th>
-</tr>	
-<?php		
-    foreach ($_SESSION["cart_item"] as $item){
-        
-		?>
-				<tr>
-				<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["item_name"]; ?></td>
-				<td><?php echo $item["item_code"]; ?></td>
-				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-				<td  style="text-align:right;"><?php echo "$ ".$item["selling_price"]; ?></td>
-				<td  style="text-align:right;"><?php echo "test"; ?></td>
-				<td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
-				</tr>
-				<?php
-				// $total_quantity += $item["quantity"];
-				// $total_price += ($item["price"]*$item["quantity"]);
-		}
-		?>
-
-<tr>
-
-<td></td>
-</tr>
-</tbody>
-</table>		
-
-</div>
-
-<!-- test cart end -->
-
-
-
-
 
 
 <!-- cart start -->
@@ -166,7 +121,7 @@ switch($_GET["action"]) {
                                     <p><?php echo "Brand: ".$item["manufacturer"]; ?></p>
                                     <p>Size: M</p>
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                     <i class="bi bi-trash3-fill"></i>
+                                     <a href="cart.php?action=remove&code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><i class="bi bi-trash3-fill">Remove Item</i></a>
                                     </button>
                                    
                                     <!-- Data -->
