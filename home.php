@@ -21,7 +21,11 @@ include_once('connection.php');
 
 <!doctype html>
 <html lang="en">
-
+<head>
+  <style>
+    
+  </style>
+</head>
 
 <div class="con">
 
@@ -167,7 +171,19 @@ include_once('connection.php');
                   <div class="d-flex justify-content-between p-3">
                     <p class="lead mb-0">Today's Combo Offer</p>
                     <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
-                      <a href="#" class="text-white mb-0 small"><i class="bi bi-cart-plus-fill"></i></a>
+                      <form method="post" action="cart.php?action=add&item_code=<?php echo $row["item_code"]; ?>">
+                      <div class="cart-action"><input type="hidden" class="product-quantity" name="quantity" value="1" size="2" />
+                      <button type="submit" class="btn btn-success">
+                      <i class="bi bi-bag-plus-fill"></i>
+                      </button>
+                </div> 
+
+                
+                
+            
+        </form>
+
+        
                     </div>
                   </div>
                   <?php echo "<img src='uploaded_img/" . $row['image'] . "' >"; ?>

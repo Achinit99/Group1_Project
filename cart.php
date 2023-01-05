@@ -86,7 +86,7 @@ switch($_GET["action"]) {
                 <div class="col-md-8">
                     <div class="card mb-4">
                         <div class="card-header py-3">
-                            <h5 class="mb-0">Cart - 2 items</h5>
+                            <h5 class="mb-0">Cart items</h5>
                         </div>
 
 
@@ -98,8 +98,11 @@ switch($_GET["action"]) {
                         <!-- test cart st -->
 
 <?php		
-
+$tot = 0;
+$total_quantity = 0;
     foreach ($_SESSION["cart_item"] as $item){
+
+      $item_price = $item["quantity"]*$item["selling_price"];
         
 		?>
 			
@@ -107,9 +110,10 @@ switch($_GET["action"]) {
               <div class="row">
                                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                     <!-- Image -->
-                                    $directory = "mytheme/images/myimages";
+                                    <?php
+                                    $directory = "uploaded_img/"; ?>
                                     <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                        <img src="<?php echo $item['image']; ?>" class="w-100" alt="img" />
+                                        <img src="<?php echo $directory.$item['image']; ?>" class="w-100" alt="img" />
                                         <a href="#!">
                                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                         </a>
@@ -121,7 +125,7 @@ switch($_GET["action"]) {
                                     <!-- Data -->
                                     <p><strong><?php echo $item["item_name"]; ?></strong></p>
                                     <p><?php echo "Brand: ".$item["manufacturer"]; ?></p>
-                                    <p>Size: M</p>
+                                    <!-- <p>Size: M</p> -->
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
                                      <a href="cart.php?action=remove&item_code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><i class="bi bi-trash3-fill">Remove Item</i></a>
                                     </button>
@@ -149,13 +153,19 @@ switch($_GET["action"]) {
 
                                     <!-- selling_price -->
                                     <p class="text-start text-md-center">
-                                        <strong><?php echo "RS. ".$item["selling_price"]; ?></strong>
+                                        <strong><?php echo "RS (Per Unit) . ".$item["selling_price"]; ?></strong>
+                                        
                                     </p>
                                     <!-- selling_price -->
                                 </div>
+                                <hr>
                             </div>
                             <!-- Single item -->
+
+                            
 				<?php
+        $tot = $tot + $item_price;
+        $total_quantity =$total_quantity + $item["quantity"];
 				// $total_quantity += $item["quantity"];
 				// $total_price += ($item["price"]*$item["quantity"]);
 		}
@@ -199,11 +209,11 @@ switch($_GET["action"]) {
                             <ul class="list-group list-group-flush ">
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 ">
                                     Products
-                                    <span>$53.98</span>
+                                    <span><?php echo $total_quantity;?></span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                     Shipping
-                                    <span>Gratis</span>
+                                    <span>Free</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                     <div>
@@ -212,7 +222,7 @@ switch($_GET["action"]) {
                                             <p class="mb-0">(including VAT)</p>
                                         </strong>
                                     </div>
-                                    <span><strong>$53.98</strong></span>
+                                    <span><strong><?php echo "RS. ". $tot ;?></strong></span>
                                 </li>
                             </ul>
 

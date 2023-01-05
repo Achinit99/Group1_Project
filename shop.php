@@ -118,6 +118,7 @@ $db_handle = new DBController();
          <form method="post" action="cart.php?action=add&item_code=<?php echo $row["item_code"]; ?>">
                 <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>      
         </form>
+     
 
 
         </div>
