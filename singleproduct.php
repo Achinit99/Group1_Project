@@ -14,6 +14,18 @@ else{
 
 include_once('connection.php');
 
+if (isset($_POST['add'])) {
+
+    $id = $_POST['id'];
+    
+
+
+
+    // $upquery = "UPDATE item SET item_name='$name', category='$Category', unit_price='$unitprice',selling_price='$sellingprice', quantity='$quantity' WHERE item_code = '$id'";
+    // $query_run = mysqli_query($connection, $upquery);
+
+
+}
 
 ?>
 
@@ -77,6 +89,8 @@ include_once('connection.php');
 
 
         <h2>Related Products</h2>
+
+        <h1><?php echo $id; ?></h1>
 
 
 

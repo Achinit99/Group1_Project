@@ -83,12 +83,12 @@ $db_handle = new DBController();
               <div class="d-flex justify-content-between p-3">
               <p class="lead mb-0">Today's Combo Offer</p>
                     <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
-                      <form method="post" action="singleproduct.php?action=add&item_code=<?php echo $row["item_code"]; ?>">
+        <form method="post" action="singleproduct.php">
                       <div class="cart-action"><input type="hidden" class="product-quantity" name="quantity" value="1" size="2" />
                       <button type="submit" class="btn btn-success">More
                       <!-- <i class="bi bi-bag-plus-fill"></i> -->
                       </button>
-                </div> 
+                      </div> 
         </form>
 
                 </div>
