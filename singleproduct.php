@@ -59,7 +59,8 @@ if (isset($_POST['item_code'])) {
   <?php
 
 while($row=mysqli_fetch_assoc($query_run)) {  
-    
+   $idprice =$row['selling_price']+10000; 
+   $saved_price = $idprice - $row['selling_price'];
    
 ?>
                 <div class="col-lg-6 order-lg-2 order-1">
@@ -71,11 +72,11 @@ while($row=mysqli_fetch_assoc($query_run)) {
                     <!-- product title -->
                     <div class="product_name"><?php echo $row['item_name']; ?></div>
                     <div class="product-rating"><span class="badge badge-success text-warning"><i class="bi bi-star-fill text-warning"></i> 4.5 Star</span> <span class="rating-review">35 Ratings & 45 Reviews</span></div>
-                    <div> <span class="product_price"><?php echo "RS. ".$row['selling_price']; ?></span> <strike class="product_discount"> <span style='color:black'>RS: 360,000<span> </strike> </div>
-                    <div> <span class="product_saved">You Saved:</span> <span style='color:black'>RS: 20,000<span> </div>
+                    <div> <span class="product_price"><?php echo "RS. ".$row['selling_price']; ?></span> <strike class="product_discount"> <span style='color:black'><?php echo "RS. ".$idprice?><span> </strike> </div>
+                    <div> <span class="product_saved">You Saved:</span> <span style='color:black'><?php echo "RS. ".$saved_price?><span> </div>
                     <hr class="singleline">
                     <!-- product description -->
-                    <p>MaBook Air M2 - Technical Specifications · 13.6-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1664 native resolution at 224 pixels per inch . </p>
+                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be</p>
                     <div>
                         <div class="row">
                             <div class="col-md-5">
