@@ -226,9 +226,11 @@ $total_quantity = 0;
                                 </li>
                             </ul>
 
-                            <button type="button" class="btn btn-primary btn-lg btn-block">
-                                Go to checkout
-                            </button>
+
+                            <form method="post" action="checkout.php">
+                            <input type="hidden" name="tot" value="<?php echo $tot ?>">
+                            <div class="cart-action"><button type="submit" value="" class="btn btn-primary btn-lg btn-block" /> Go to checkout</button></div>      
+                            </form>
                         </div>
                     </div>
                 </div>

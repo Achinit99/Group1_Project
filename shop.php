@@ -87,7 +87,7 @@ $db_handle = new DBController();
 
          <form method="post" action="singleproduct.php">
             <input type="hidden" name="item_code" value="<?php echo $row['item_code']; ?>">
-            <div class="cart-action"><button type="submit" value="" class="btn btn-success editbtn" /><i class="bi bi-bag-plus-fill"></i> </button></div>      
+            <div class="cart-action"><button type="submit" value="" class="btn btn-success editbtn" /><i class="bi bi-view-list"></i> </button></div>      
         </form>
 
                 </div>
