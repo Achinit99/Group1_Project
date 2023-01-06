@@ -11,18 +11,19 @@ else{
     include_once('header.php');
 }
 
+$id =0;
 
 include_once('connection.php');
 
-if (isset($_POST['add'])) {
+if (isset($_POST['item_code'])) {
 
-    $id = $_POST['id'];
+    $id = $_POST['item_code'];
     
 
+    $query = "SELECT * FROM item WHERE item_code = $id";
+    $query_run = mysqli_query($connection,$query);
+    
 
-
-    // $upquery = "UPDATE item SET item_name='$name', category='$Category', unit_price='$unitprice',selling_price='$sellingprice', quantity='$quantity' WHERE item_code = '$id'";
-    // $query_run = mysqli_query($connection, $upquery);
 
 
 }
@@ -37,6 +38,8 @@ if (isset($_POST['add'])) {
         .single_product{
             margin-top: 6.5%;
         }
+
+        
     </style>
 </head>
 
@@ -51,17 +54,24 @@ if (isset($_POST['add'])) {
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_3.jpg"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_3.jpg" alt=""></li>
                     </ul>
                 </div> -->
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <div class="image_selected"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg" alt=""></div>
-                </div>
 
+
+  <?php
+
+while($row=mysqli_fetch_assoc($query_run)) {  
+    
+   
+?>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <div class="image_selected"><?php echo "<img height='400px' src='uploaded_img/" . $row['image'] . "' > "; ?></div>
+                </div>
 
 
                 <div class="col-lg-6 order-3 mt-5">
                     <!-- product title -->
-                    <div class="product_name">MacBook Air M1 2020 8GB 256GB Silver</div>
+                    <div class="product_name"><?php echo $row['item_name']; ?></div>
                     <div class="product-rating"><span class="badge badge-success text-warning"><i class="bi bi-star-fill text-warning"></i> 4.5 Star</span> <span class="rating-review">35 Ratings & 45 Reviews</span></div>
-                    <div> <span class="product_price">RS: 340,000</span> <strike class="product_discount"> <span style='color:black'>RS: 360,000<span> </strike> </div>
+                    <div> <span class="product_price"><?php echo "RS. ".$row['selling_price']; ?></span> <strike class="product_discount"> <span style='color:black'>RS: 360,000<span> </strike> </div>
                     <div> <span class="product_saved">You Saved:</span> <span style='color:black'>RS: 20,000<span> </div>
                     <hr class="singleline">
                     <!-- product description -->
@@ -86,12 +96,13 @@ if (isset($_POST['add'])) {
                 </div>
             </div>
         </div>
+        <?php } ?>
 
 
         <h2>Related Products</h2>
 
-        <h1><?php echo $id; ?></h1>
-
+        
+<?php echo "$id" ?>
 
 
         <dic class="foo"></dic>
