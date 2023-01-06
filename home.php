@@ -173,17 +173,8 @@ include_once('connection.php');
                     <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
 
 
-                      <form method="post" action="singleproduct.php">
-                      <div class="cart-action"><input type="hidden" class="product-quantity" name="id" value="1" size="2" />
-                      <button type="submit" name="add" class="btn btn-success editbtn">
-                      <i class="bi bi-bag-plus-fill"></i>
-                      </button>
-
-                </div> 
-
-                
-                
-            
+                    <form method="post" action="cart.php?action=add&item_code=<?php echo $row["item_code"]; ?>">
+                <div class="cart-action"><input type="hidden" class="product-quantity" name="quantity" value="1" size="2" /><button type="submit" value="" class="btn btn-success editbtn" /><i class="bi bi-bag-plus-fill"></i> </button></div>      
         </form>
 
         
