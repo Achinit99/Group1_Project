@@ -45,7 +45,7 @@ switch($_GET["action"]) {
 	case "remove":
 		if(!empty($_SESSION["cart_item"])) {
 			foreach($_SESSION["cart_item"] as $k => $v) {
-					if($_GET["item_code"] == $k)
+					if($_GET["code"] == $k)
 						unset($_SESSION["cart_item"][$k]);				
 					if(empty($_SESSION["cart_item"]))
 						unset($_SESSION["cart_item"]);
@@ -57,6 +57,8 @@ switch($_GET["action"]) {
 	break;	
 	}
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -127,7 +129,7 @@ $total_quantity = 0;
                                     <p><?php echo "Brand: ".$item["manufacturer"]; ?></p>
                                     <!-- <p>Size: M</p> -->
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                     <a href="cart.php?action=remove&item_code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><i class="bi bi-trash3-fill">Remove Item</i></a>
+                                     <a href="cart.php?action=remove&code=<?php echo $item["item_code"]; ?>" class="btnRemoveAction"><i class="bi bi-trash3-fill">Remove Item</i></a>
                                     </button>
                                    
                                     <!-- Data -->
@@ -153,7 +155,7 @@ $total_quantity = 0;
 
                                     <!-- selling_price -->
                                     <p class="text-start text-md-center">
-                                        <strong><?php echo "RS (Per Unit) . ".$item["selling_price"]; ?></strong>
+                                        <strong><?php echo "RS (Per Unit) . ".number_format($item["selling_price"],2); ?></strong>
                                         
                                     </p>
                                     <!-- selling_price -->
@@ -222,7 +224,7 @@ $total_quantity = 0;
                                             <p class="mb-0">(including VAT)</p>
                                         </strong>
                                     </div>
-                                    <span><strong><?php echo "RS. ". $tot ;?></strong></span>
+                                    <span><strong><?php echo "RS. ". number_format($tot,2) ;?></strong></span>
                                 </li>
                             </ul>
 

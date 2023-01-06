@@ -189,7 +189,7 @@ include_once('connection.php');
 
                     <div class="d-flex justify-content-between mb-3">
                       <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
-                      <h5 class="text-dark mb-0"><?php echo $row['selling_price']; ?></h5>
+                      <h5 class="text-dark mb-0"><?php echo "RS. ", number_format($row['selling_price'],2); ?></h5>
                     </div>
 
                     <div class="d-flex justify-content-between mb-2">

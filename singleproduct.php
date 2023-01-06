@@ -72,7 +72,7 @@ while($row=mysqli_fetch_assoc($query_run)) {
                     <!-- product title -->
                     <div class="product_name"><?php echo $row['item_name']; ?></div>
                     <div class="product-rating"><span class="badge badge-success text-warning"><i class="bi bi-star-fill text-warning"></i> 4.5 Star</span> <span class="rating-review">35 Ratings & 45 Reviews</span></div>
-                    <div> <span class="product_price"><?php echo "RS. ".$row['selling_price']; ?></span> <strike class="product_discount"> <span style='color:black'><?php echo "RS. ".$idprice?><span> </strike> </div>
+                    <div> <span class="product_price"><?php echo "RS. ".number_format($row['selling_price'],2); ?></span> <strike class="product_discount"> <span style='color:black'><?php echo "RS. ".$idprice?><span> </strike> </div>
                     <div> <span class="product_saved">You Saved:</span> <span style='color:black'><?php echo "RS. ".$saved_price?><span> </div>
                     <hr class="singleline">
                     <!-- product description -->

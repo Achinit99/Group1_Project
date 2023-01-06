@@ -32,6 +32,9 @@ while ($res = mysqli_fetch_assoc($result_for_cal)) {
 
 $profit = $tot - $tot2;
 
+// Profit percentage = (Profit/Cost Price) × 100.
+
+$profit_pre=($profit /$tot2)*100;
 
 include_once('dashtemp.php');
 
@@ -86,7 +89,7 @@ include_once('dashtemp.php');
                             <div class="ms-3">
                                 <p class="mb-2">Profit</p>
                                 <h6 class="mb-0"><?php
-                                                    echo "RS: ";
+                                                    echo "% ".number_format($profit_pre,2);
                                                     ?></h6>
                                 </h6>
                             </div>
