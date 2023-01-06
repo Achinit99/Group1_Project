@@ -52,10 +52,10 @@ $db_handle = new DBController();
 
 <div id="myBtnContainer ">
   <button class="btn active btn-secondary" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn btn-secondary" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn btn-secondary" onclick="filterSelection('animals')"> Animals</button>
-  <button class="btn btn-secondary" onclick="filterSelection('fruits')"> Fruits</button>
-  <button class="btn btn-secondary" onclick="filterSelection('colors')"> Colors</button>
+  <button class="btn btn-secondary" onclick="filterSelection('cars')"> Mother Bords</button>
+  <button class="btn btn-secondary" onclick="filterSelection('animals')"> HDD</button>
+  <button class="btn btn-secondary" onclick="filterSelection('fruits')"> SSD</button>
+  <button class="btn btn-secondary" onclick="filterSelection('colors')"> GPU</button>
 </div>
 
     </div>
