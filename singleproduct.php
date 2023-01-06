@@ -77,6 +77,7 @@ while($row=mysqli_fetch_assoc($query_run)) {
                     <hr class="singleline">
                     <!-- product description -->
                     <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be</p>
+                    
                     <div>
                         <div class="row">
                             <div class="col-md-5">
@@ -84,15 +85,14 @@ while($row=mysqli_fetch_assoc($query_run)) {
                             </div>
                         </div>
 
+                        
                     </div>
                     <hr class="singleline">
                     <div class="row my-3">
-                        <div class="col-xs-6">
-                            <div class="product_quantity"> <span>QTY: </span> <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-                            </div>
-                        </div>
-                        <div class="col-xs-6"> <button type="button" class="btn btn-primary shop-button">Add to Cart</button> <button type="button" class="btn btn-success shop-button">Buy Now</button>
-                        </div>
+
+        <form method="post" action="cart.php?action=add&item_code=<?php echo $row["item_code"]; ?>">
+                <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btn btn-success editbtn mx-2" /></div>      
+        </form>
                     </div>
                 </div>
             </div>
