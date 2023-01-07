@@ -39,13 +39,18 @@ if (isset($_POST['item_code'])) {
             margin-top: 6.5%;
         }
 
+        .related
+        {
+          margin: 30px;
+        }
+
         
     </style>
 </head>
 
 
     <div class="single_product">
-        <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
+        <div class="container-fluid" style=" background-color: #fff; padding: 20px;">
             <div class="row mx-4">
                 <!-- <div class="col-lg-2 order-lg-1 order-2">
                     <ul class="image_list">
@@ -63,7 +68,7 @@ while($row=mysqli_fetch_assoc($query_run)) {
    $saved_price = $idprice - $row['selling_price'];
    
 ?>
-                <div class="col-lg-6 order-lg-2 order-1">
+                <div class="col-lg-6 ">
                     <div class="image_selected"><?php echo "<img height='400px' src='uploaded_img/" . $row['image'] . "' > "; ?></div>
                 </div>
 
@@ -95,15 +100,17 @@ while($row=mysqli_fetch_assoc($query_run)) {
         </form>
                     </div>
                 </div>
+                
             </div>
+            <div class="related">
+            <h2 >Related Products</h2>
+            </div>
+
         </div>
         <?php } ?>
 
 
-        <h2>Related Products</h2>
 
-        
-<?php echo "$id" ?>
 
 
         <dic class="foo"></dic>

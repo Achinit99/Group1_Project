@@ -102,11 +102,14 @@ switch($_GET["action"]) {
 <?php		
 $tot = 0;
 $total_quantity = 0;
-    foreach ($_SESSION["cart_item"] as $item){
 
-      $item_price = $item["quantity"]*$item["selling_price"];
-        
-		?>
+
+  foreach ($_SESSION["cart_item"] as $item){
+    $item_price = $item["quantity"]*$item["selling_price"]; 
+  ?>
+
+
+   
 			
               <!-- Single item -->
               <div class="row">
@@ -166,6 +169,7 @@ $total_quantity = 0;
 
                             
 				<?php
+        
         $tot = $tot + $item_price;
         $total_quantity =$total_quantity + $item["quantity"];
 				// $total_quantity += $item["quantity"];
