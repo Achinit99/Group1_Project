@@ -104,6 +104,85 @@ while($row=mysqli_fetch_assoc($query_run)) {
             </div>
             <div class="related">
             <h2 >Related Products</h2>
+
+
+  <!-- product start -->
+
+
+  <div class="container my-2" style="background-color:  #fff;">
+
+
+
+<?php
+
+$select = mysqli_query($connection, "SELECT * FROM item");
+
+?>
+
+
+<section style="background-color:  #fff;">
+  <div class="prosec">
+    <div class="container py-5 " style="background-color:  #fff;">
+
+      <div class="row">
+
+
+
+        <?php
+
+
+        for ($i = 0; $i < 3; $i++) {
+          $row = mysqli_fetch_assoc($select);
+        ?>
+
+
+          <div class="col-md-12 col-lg-4 mb-4 mb-lg-0 my-3">
+            <div class="card">
+              <div class="d-flex justify-content-between p-3">
+                <p class="lead mb-0">Today's Combo Offer</p>
+                <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 35px; height: 35px;">
+
+
+                <form method="post" action="cart.php?action=add&item_code=<?php echo $row["item_code"]; ?>">
+            <div class="cart-action"><input type="hidden" class="product-quantity" name="quantity" value="1" size="2" /><button type="submit" value="" class="btn btn-success editbtn" /><i class="bi bi-bag-plus-fill"></i> </button></div>      
+    </form>
+
+    
+                </div>
+              </div>
+              <?php echo "<img src='uploaded_img/" . $row['image'] . "' >"; ?>
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <p class="small"><a href="#!" class="text-muted"><?php echo $row['manufacturer']; ?></a></p>
+                  <p class="small text-danger"><s>$1099</s></p>
+                </div>
+
+                <div class="d-flex justify-content-between mb-3">
+                  <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
+                  <h5 class="text-dark mb-0"><?php echo "RS. ", number_format($row['selling_price'],2); ?></h5>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                  <p class="text-muted mb-0">Available: <span class="fw-bold"><?php echo $row['quantity']; ?></span></p>
+                  <div class="ms-auto text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+
+
+      </div>
+    </div>
+</section>
+</div>
+
             </div>
 
         </div>
